@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title>Paintings</title>
+      <title>Photography</title>
       <link>https://kmckee90.github.io/page/art/photos/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
@@ -41,12 +41,21 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/page/about/</guid>
-      <description>I live in Nelson County, VA on the side of a mountain with my wife, Linnea, a cat, and a dog. In my free time I do things with the surrounding land like clearing hiking trails, hunting for edible mushrooms, and stargazing.
+      <description>I live in Nelson County, Virginia, on the side of a mountain with my wife, Linnea, a cat, and a dog. In my free time I do things with the surrounding land like clearing hiking trails, hunting for edible mushrooms, and stargazing.
 Job title: Postdoctoral Associate
 Department of Statistics
 Center for Biostatistics and Health Data Science
 Virginia Tech
 Curriculum Vitae</description>
+    </item>
+    
+    <item>
+      <title>Apps</title>
+      <link>https://kmckee90.github.io/page/apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/apps/</guid>
+      <description> </description>
     </item>
     
     <item>
@@ -59,7 +68,16 @@ Curriculum Vitae</description>
     </item>
     
     <item>
-      <title>Code</title>
+      <title>Contact</title>
+      <link>https://kmckee90.github.io/page/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/contact/</guid>
+      <description>Email: k mckee 9 0 at gmail</description>
+    </item>
+    
+    <item>
+      <title>Lectures</title>
       <link>https://kmckee90.github.io/page/lectures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
@@ -68,15 +86,6 @@ Curriculum Vitae</description>
  Stochastic Processes in R course
  VIPBG Research Seminar
  </description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://kmckee90.github.io/page/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kmckee90@gmail.com (Kevin McKee)</author>
-      <guid>https://kmckee90.github.io/page/contact/</guid>
-      <description>Email: k mckee 9 0 at gmail</description>
     </item>
     
     <item>
@@ -96,8 +105,10 @@ Curriculum Vitae</description>
       <guid>https://kmckee90.github.io/page/publications/</guid>
       <description>McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (in press)
 McKee, K. L., Crandell, I. C., Hanlon, A. L. (2020) US County-Level Social Distancing and Policy Impact: A Dynamical Systems Model. Journal of Medical Internet Research
+https://doi.org/10.2196/23902
 McKee, K. L., Russell, M., Mennis, J., Mason, M., &amp;amp; Neale, M. C. (2019). Emotion Regulation Dynamics Predict Substance Use in High-Risk Adolescents. Addictive Behaviors
-McKee, K. L., &amp;amp; Neale, M.</description>
+https://doi.org/10.1016/j.addbeh.2020.106374
+McKee, K. L., Phenotype Extraction: Estimation and Biometrical Genetic Analysis of Individual Dynamics, Virginia Commonwealth University.</description>
     </item>
     
   </channel>
