@@ -1,28 +1,130 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test website</title>
+    <title>Kevin McKee</title>
     <link>https://kmckee90.github.io/</link>
-    <description>Recent content on Test website</description>
+    <description>Recent content on Kevin McKee</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 19:53:23 -0500</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
+    <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
+    <lastBuildDate>Fri, 12 Mar 2021 21:40:23 -0500</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PostPage2</title>
-      <link>https://kmckee90.github.io/pages/page2/postpage2/</link>
-      <pubDate>Fri, 12 Mar 2021 19:53:23 -0500</pubDate>
-      
-      <guid>https://kmckee90.github.io/pages/page2/postpage2/</guid>
-      <description></description>
+      <title>Painting a harpsichord lid</title>
+      <link>https://kmckee90.github.io/post/harpsichordprocess/</link>
+      <pubDate>Fri, 12 Mar 2021 21:40:23 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/harpsichordprocess/</guid>
+      <description>Some process photos from my painting on a harpsichord lid. I&amp;rsquo;m using this post to figure out getting images into blog post previews.
+Check out this first mockup in photoshop:      Stages of painting:
+                         Final result:
+     If I have too much text in this post then the site theme collapses the entire thing into some text and you can&amp;rsquo;t see the images.</description>
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://kmckee90.github.io/posts/my-first-post/</link>
-      <pubDate>Thu, 11 Mar 2021 08:43:55 -0500</pubDate>
-      
-      <guid>https://kmckee90.github.io/posts/my-first-post/</guid>
-      <description></description>
+      <title>Art</title>
+      <link>https://kmckee90.github.io/post/art/</link>
+      <pubDate>Fri, 12 Mar 2021 21:13:28 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/art/</guid>
+      <description>Art gallery now works. Woohoo!
+             Check out the paintings</description>
+    </item>
+    
+    <item>
+      <title>First post</title>
+      <link>https://kmckee90.github.io/post/first/</link>
+      <pubDate>Fri, 12 Mar 2021 21:12:28 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/first/</guid>
+      <description>Have to put something or else it&amp;rsquo;s just negative space.</description>
+    </item>
+    
+    <item>
+      <title>Drawings</title>
+      <link>https://kmckee90.github.io/page/art/drawings/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/art/drawings/</guid>
+      <description>                      </description>
+    </item>
+    
+    <item>
+      <title>Paintings</title>
+      <link>https://kmckee90.github.io/page/art/paintings/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/art/paintings/</guid>
+      <description>                                                                          </description>
+    </item>
+    
+    <item>
+      <title>Paintings</title>
+      <link>https://kmckee90.github.io/page/art/photos/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/art/photos/</guid>
+      <description>              </description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://kmckee90.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/about/</guid>
+      <description>Curriculum Vitae
+I live in Nelson County, VA on the side of a mountain with my wife, Linnea, a cat, and a dog. In my free time I do things with the surrounding land like clearing hiking trails, hunting for edible mushrooms, and stargazing.</description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://kmckee90.github.io/page/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/code/</guid>
+      <description>Coding projects and tutorials will go here </description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://kmckee90.github.io/page/lectures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/lectures/</guid>
+      <description>iTHRIV Structural Equation Modeling Talk
+ Stochastic Processes in R course
+ VIPBG Research Seminar
+ </description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://kmckee90.github.io/page/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/contact/</guid>
+      <description>Email: k mckee 9 0 at gmail</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://kmckee90.github.io/page/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/links/</guid>
+      <description> Google Scholar page github repositories for various projects OSF page for supplemental materials of published projects Old art website Old blog serving as my notebook for philosophy, math, statistics, and cognitive science study  </description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://kmckee90.github.io/page/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/publications/</guid>
+      <description>McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (in press)
+McKee, K. L., Crandell, I. C., Hanlon, A. L. (2020) US County-Level Social Distancing and Policy Impact: A Dynamical Systems Model. Journal of Medical Internet Research
+McKee, K. L., Russell, M., Mennis, J., Mason, M., &amp;amp; Neale, M. C. (2019). Emotion Regulation Dynamics Predict Substance Use in High-Risk Adolescents. Addictive Behaviors
+McKee, K. L., &amp;amp; Neale, M.</description>
     </item>
     
   </channel>

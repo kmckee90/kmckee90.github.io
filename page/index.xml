@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Kevin McKee</title>
+    <link>https://kmckee90.github.io/page/</link>
+    <description>Recent content in Pages on Kevin McKee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
+    <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
+    <lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://kmckee90.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drawings</title>
+      <link>https://kmckee90.github.io/page/art/drawings/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/art/drawings/</guid>
+      <description>                      </description>
+    </item>
+    
+    <item>
+      <title>Paintings</title>
+      <link>https://kmckee90.github.io/page/art/paintings/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/art/paintings/</guid>
+      <description>                                                                          </description>
+    </item>
+    
+    <item>
+      <title>Paintings</title>
+      <link>https://kmckee90.github.io/page/art/photos/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/art/photos/</guid>
+      <description>              </description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://kmckee90.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/about/</guid>
+      <description>Curriculum Vitae
+I live in Nelson County, VA on the side of a mountain with my wife, Linnea, a cat, and a dog. In my free time I do things with the surrounding land like clearing hiking trails, hunting for edible mushrooms, and stargazing.</description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://kmckee90.github.io/page/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/code/</guid>
+      <description>Coding projects and tutorials will go here </description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://kmckee90.github.io/page/lectures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/lectures/</guid>
+      <description>iTHRIV Structural Equation Modeling Talk
+ Stochastic Processes in R course
+ VIPBG Research Seminar
+ </description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://kmckee90.github.io/page/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/contact/</guid>
+      <description>Email: k mckee 9 0 at gmail</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://kmckee90.github.io/page/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/links/</guid>
+      <description> Google Scholar page github repositories for various projects OSF page for supplemental materials of published projects Old art website Old blog serving as my notebook for philosophy, math, statistics, and cognitive science study  </description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://kmckee90.github.io/page/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/publications/</guid>
+      <description>McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (in press)
+McKee, K. L., Crandell, I. C., Hanlon, A. L. (2020) US County-Level Social Distancing and Policy Impact: A Dynamical Systems Model. Journal of Medical Internet Research
+McKee, K. L., Russell, M., Mennis, J., Mason, M., &amp;amp; Neale, M. C. (2019). Emotion Regulation Dynamics Predict Substance Use in High-Risk Adolescents. Addictive Behaviors
+McKee, K. L., &amp;amp; Neale, M.</description>
+    </item>
+    
+  </channel>
+</rss>

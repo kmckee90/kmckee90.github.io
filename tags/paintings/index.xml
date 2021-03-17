@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>paintings on Kevin McKee</title>
+    <link>https://kmckee90.github.io/tags/paintings/</link>
+    <description>Recent content in paintings on Kevin McKee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
+    <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
+    <lastBuildDate>Fri, 12 Mar 2021 21:13:28 -0500</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/paintings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Art</title>
+      <link>https://kmckee90.github.io/post/art/</link>
+      <pubDate>Fri, 12 Mar 2021 21:13:28 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/art/</guid>
+      <description>Art gallery now works. Woohoo!
+             Check out the paintings</description>
+    </item>
+    
+  </channel>
+</rss>

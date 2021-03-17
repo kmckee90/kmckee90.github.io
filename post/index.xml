@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Kevin McKee</title>
+    <link>https://kmckee90.github.io/post/</link>
+    <description>Recent content in Posts on Kevin McKee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
+    <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
+    <lastBuildDate>Fri, 12 Mar 2021 21:40:23 -0500</lastBuildDate><atom:link href="https://kmckee90.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Painting a harpsichord lid</title>
+      <link>https://kmckee90.github.io/post/harpsichordprocess/</link>
+      <pubDate>Fri, 12 Mar 2021 21:40:23 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/harpsichordprocess/</guid>
+      <description>Some process photos from my painting on a harpsichord lid. I&amp;rsquo;m using this post to figure out getting images into blog post previews.
+Check out this first mockup in photoshop:      Stages of painting:
+                         Final result:
+     If I have too much text in this post then the site theme collapses the entire thing into some text and you can&amp;rsquo;t see the images.</description>
+    </item>
+    
+    <item>
+      <title>Art</title>
+      <link>https://kmckee90.github.io/post/art/</link>
+      <pubDate>Fri, 12 Mar 2021 21:13:28 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/art/</guid>
+      <description>Art gallery now works. Woohoo!
+             Check out the paintings</description>
+    </item>
+    
+    <item>
+      <title>First post</title>
+      <link>https://kmckee90.github.io/post/first/</link>
+      <pubDate>Fri, 12 Mar 2021 21:12:28 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/first/</guid>
+      <description>Have to put something or else it&amp;rsquo;s just negative space.</description>
+    </item>
+    
+  </channel>
+</rss>
