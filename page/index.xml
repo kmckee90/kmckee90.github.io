@@ -41,13 +41,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/page/about/</guid>
-      <description>I live in Nelson County, Virginia, on the side of a mountain with my wife, Linnea, my cat, Hobbes, and my dog, Thomas.
-Research Job title: Postdoctoral Associate
-Department of Statistics
-Center for Biostatistics and Health Data Science
-Virginia Tech
-Curriculum Vitae
-Applied Statistics My primary role in research is as a statistical consultant, helping investigators with everything from the conception of new hypotheses to writing grants, running analyses, and publishing manuscripts.</description>
+      <description>img { float: right; padding-bottom: 30px; }    I have lived in Virginia for my whole life. As of recently, I live in a house out in the mountains with my wife, Linnea, my cat, Hobbes, and our new pup, Thomas (pictured above).
+Interests Psychology My undergraduate degree is in Psychology but I have not carried out much of my own substantive research. Having come to understand things like artificial neural networks, I am hoping to use them to eventually contribute to the science of cognition and perception.</description>
     </item>
     
     <item>
@@ -91,10 +86,25 @@ Some of my projects are completely lacking in annotations, full of commented out
       <description>Google Scholar page
 Curriculum Vitae
 OSF for supplemental materials of published projects
-McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (in press)
+McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (pending final reviews)
+Preprint
 McKee, K. L., Crandell, I. C., Hanlon, A. L. (2020) US County-Level Social Distancing and Policy Impact: A Dynamical Systems Model. Journal of Medical Internet Research
 https://doi.org/10.2196/23902
 McKee, K. L., Russell, M., Mennis, J., Mason, M., &amp;amp; Neale, M. C. (2019). Emotion Regulation Dynamics Predict Substance Use in High-Risk Adolescents.</description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>https://kmckee90.github.io/page/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/research/</guid>
+      <description>Job title: Postdoctoral Associate
+Department of Statistics
+Center for Biostatistics and Health Data Science
+Virginia Tech
+Applied Statistics My primary role in research is as a statistical consultant, helping investigators with everything from the conception of new hypotheses to writing grants, running analyses, and publishing manuscripts.
+Theoretical Methods My methodological research merges ideas from biometrical genetic theory with state-space modeling. In short, I am interested in how estimated genetic signals such as heritability can be used to validate theoretical models of cognition and behavior.</description>
     </item>
     
   </channel>

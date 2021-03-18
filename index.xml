@@ -15,8 +15,7 @@
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/post/rbm1/</guid>
       <description>github source for this project
-I&amp;rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine. There isn&amp;rsquo;t much implementation of these in R, but I did find this tutorial. Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.
-The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &amp;ldquo;dreaming&amp;rdquo; fake data during the sleep phase of the wake-sleep algorithm.</description>
+For most statistical models, you can verify that they work by simulating data from a set of parameter values, then fitting the model to the simulated data and seeing how well it recovers those values. With artificial neural networks it is common to have many local solutions and a stochastic learning algorithm, so while an ANN may find an good solution on the simulated data, it is far less likely to match the data-generating parameters.</description>
     </item>
     
     <item>
@@ -27,6 +26,15 @@ The difference between the RBM and the Helmholtz machine is the former uses a ki
       <guid>https://kmckee90.github.io/post/harpsichordprocess/</guid>
       <description>Some process photos from my painting on a harpsichord lid. (I&amp;rsquo;m using this post to figure out getting images into blog posts and such.)
 I painted this harpsichord lid for a commission in 2016. I started with a photoshop mockup:      The first stages of the actual painting are interesting to look back on because they show how fundamental color and movement are to the composition:                          Final result:</description>
+    </item>
+    
+    <item>
+      <title>First post</title>
+      <link>https://kmckee90.github.io/post/first/</link>
+      <pubDate>Thu, 11 Mar 2021 21:40:23 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/first/</guid>
+      <description>As of this first post, I&amp;rsquo;ll be using this site to document my various projects, code, minor discoveries, or other thoughts that probably won&amp;rsquo;t be published anywhere else.</description>
     </item>
     
     <item>
@@ -62,13 +70,8 @@ I painted this harpsichord lid for a commission in 2016. I started with a photos
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/page/about/</guid>
-      <description>I live in Nelson County, Virginia, on the side of a mountain with my wife, Linnea, my cat, Hobbes, and my dog, Thomas.
-Research Job title: Postdoctoral Associate
-Department of Statistics
-Center for Biostatistics and Health Data Science
-Virginia Tech
-Curriculum Vitae
-Applied Statistics My primary role in research is as a statistical consultant, helping investigators with everything from the conception of new hypotheses to writing grants, running analyses, and publishing manuscripts.</description>
+      <description>img { float: right; padding-bottom: 30px; }    I have lived in Virginia for my whole life. As of recently, I live in a house out in the mountains with my wife, Linnea, my cat, Hobbes, and our new pup, Thomas (pictured above).
+Interests Psychology My undergraduate degree is in Psychology but I have not carried out much of my own substantive research. Having come to understand things like artificial neural networks, I am hoping to use them to eventually contribute to the science of cognition and perception.</description>
     </item>
     
     <item>
@@ -112,10 +115,25 @@ Some of my projects are completely lacking in annotations, full of commented out
       <description>Google Scholar page
 Curriculum Vitae
 OSF for supplemental materials of published projects
-McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (in press)
+McKee, K. L., (2021) Hierarchical Biometrical Genetic Analysis of Dynamics. Behavior Genetics (pending final reviews)
+Preprint
 McKee, K. L., Crandell, I. C., Hanlon, A. L. (2020) US County-Level Social Distancing and Policy Impact: A Dynamical Systems Model. Journal of Medical Internet Research
 https://doi.org/10.2196/23902
 McKee, K. L., Russell, M., Mennis, J., Mason, M., &amp;amp; Neale, M. C. (2019). Emotion Regulation Dynamics Predict Substance Use in High-Risk Adolescents.</description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>https://kmckee90.github.io/page/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/page/research/</guid>
+      <description>Job title: Postdoctoral Associate
+Department of Statistics
+Center for Biostatistics and Health Data Science
+Virginia Tech
+Applied Statistics My primary role in research is as a statistical consultant, helping investigators with everything from the conception of new hypotheses to writing grants, running analyses, and publishing manuscripts.
+Theoretical Methods My methodological research merges ideas from biometrical genetic theory with state-space modeling. In short, I am interested in how estimated genetic signals such as heritability can be used to validate theoretical models of cognition and behavior.</description>
     </item>
     
   </channel>

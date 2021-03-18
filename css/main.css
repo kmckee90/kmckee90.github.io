@@ -9,6 +9,14 @@ body {
   flex-flow: column;
   height: 100vh;
 }
+
+.rectangle {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+}
+
+
 .container[role=main] {
   margin-bottom:50px;
   flex: 1 0 auto;
@@ -503,10 +511,11 @@ footer .theme-by {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  -webkit-transition: opacity 1s linear;
+  -webkit-transition: opacity 1 linear;
   -moz-transition: opacity 1s linear;
   transition: opacity 1s linear;
 }
+
 .intro-header .page-heading,
 .intro-header .tags-heading,
 .intro-header .categories-heading {
@@ -516,8 +525,9 @@ footer .theme-by {
 .intro-header.big-img .post-heading {
   padding: 100px 0;
   color: #FFF;
-  text-shadow: 1px 1px 3px #000;
+  text-shadow: 1px 1px 3px #ff0000;
 }
+
 .intro-header .page-heading h1,
 .intro-header .tags-heading h1,
 .intro-header .categories-heading h1 {

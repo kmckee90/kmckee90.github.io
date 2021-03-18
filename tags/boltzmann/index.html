@@ -83,17 +83,8 @@
           
         
           
-            <li class="navlinks-container">
-              <a class="navlinks-parent">Research</a>
-              <div class="navlinks-children">
-                
-                  <a href="/page/publications/">Publications</a>
-                
-                  <a href="/page/lectures/">Lectures</a>
-                
-                  <a href="/CV2021.pdf">CV</a>
-                
-              </div>
+            <li>
+              <a title="Research" href="/page/research/">Research</a>
             </li>
           
         
@@ -231,7 +222,7 @@
   <i class="fas fa-calendar"></i>&nbsp;Posted on March 17, 2021
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
   
   
   
@@ -242,16 +233,25 @@
     </p>
     <div class="post-entry">
         <p><a href="https://github.com/kmckee90/Neural_Nets_in_R/blob/main/Boltzmann.R">github source for this project</a></p>
-<p>I&rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine.
-There isn&rsquo;t much implementation of these in R, but I did find <a href="https://www.r-bloggers.com/2013/01/restricted-boltzmann-machines-in-r/">this tutorial</a>.
-Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.</p>
-<p>The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &ldquo;dreaming&rdquo; fake data during the sleep phase of the wake-sleep algorithm.
-The solution of a Helmholtz Machine is supposed to minimize the Kullbeck-Liebler divergence of the real data and the generative distribution.
-In a way that I don&rsquo;t fully understand yet, this leads to learning deeper hidden structure that better matches the data-generating structure.
-I found through this project that the boltzmann machine with more than one layer is more likely than not to fall into a local solution that looks nothing like the data-generating network.</p>
-<p>My goal was to learn about both models by coding them from scratch in R. Then I could test the difference for myself.
+<p>For most statistical models, you can verify that they work by simulating data from a set of parameter values, then fitting the model to the simulated data and seeing how well it recovers those values.
+With artificial neural networks it is common to have many local solutions and a stochastic learning algorithm, so while an ANN may find an good solution on the simulated data, it is far less likely to match the data-generating parameters.
+I was surprised to read about the generative network called the Helmholtz Machine (HM), for which this appears to not be the case.</p>
+<p>The HM is one of a succession of binary networks including the Hopfield network, Boltzmann machine, the restricted Boltzmann machine (RBM).
+Each model in some way learns the joint probability distribution of many binary variables, with the latter three using binary hidden nodes.
+The main difference between the RBM and the HM is that the former computes a gradient for the weights by a kind of Gibbs sampling of the hidden nodes, whereas the ladder learns by &ldquo;dreaming&rdquo; fake data from a separate generative network.
+In the HM, the recognition and generation networks are used to alternately adjust each other&rsquo;s weights.
+The solution of an HM is expected to minimize the Kullbeck-Liebler divergence of the real data and the generative distribution.
+In a way that I don&rsquo;t fully understand yet, this leads to learning deeper hidden structure that better matches the data-generating structure.</p>
+<p>The idea of an ANN that better learns parsimonious, data-generating structures is appealing.
+Do GANs that learn to, say, generate photos of faces like <a href="https://thispersondoesnotexist.com/">this</a> accurately infer the genetically-driven axes of facial structure?
+Would we find nodes in the network that accurately guess the underlying genes?
+Something like a GWAS of hidden layer scores would be able to answer that.
+On a different note, does this help explain how all the various generative behaviors of humans, talking, imitating, drawing, help us come up with theoretical models of our experience?
+I want to come back to these questions later.</p>
+<p>For now, I was just interested in experimenting with the RBM and HM. There isn&rsquo;t much implementation of either in R, but I did find <a href="https://www.r-bloggers.com/2013/01/restricted-boltzmann-machines-in-r/">this tutorial</a>.
+My goal was to learn about both models by coding them from scratch in R. Then I could test the difference for myself.
 As the example code that I found was not abstracted to take any model dimensions (number of layers, nodes per each layer), I had to think of a way to do this that would allow quick and convenient manipulations.
-I decided to set up a list object <strong>L</strong>  containing the name and location of each part of the model:</p>
+It seemed easiest to set up a list object <code>L</code> containing the name and location of each part of the model:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; L
 [[1]]
 [1] &#34;bias&#34;
@@ -262,10 +262,23 @@ I decided to set up a list object <strong>L</strong>  containing the name and lo
 [[3]]
 [1] &#34;h1_1&#34; &#34;h1_2&#34; &#34;h1_3&#34; &#34;h1_4&#34; &#34;h1_5&#34; &#34;h1_6&#34; &#34;h1_7&#34; &#34;h1_8&#34;
 </code></pre></div><p>The top level indices (1-3) are the layers, and the strings within each are the names of nodes.
-This way, I could set up the network as one big adjacency matrix with contents of <strong>L</strong> as dimnames (inspired by the RAM notation of structural equation models).
-Then, I could code the entire thing with simple matrix multiplications while using <strong>L</strong> to index block sub-matrices representing the connections between layers.
+With this, I could set up the network as one big adjacency matrix with the contents of <code>L</code> as dimnames (inspired by the RAM notation of structural equation models).
+Then, I could code the entire thing with simple matrix multiplications while using <code>L</code> to index the resulting block sub-matrices representing the expectations of each layer conditional on those above or below it.
 This approach is slow because it is in R and it involves a lot of unnecessary computations over all the zero-values, but it seemed like a balance between making the code abstract and concise.</p>
-<p>Starting with just the RBM for now, this code obtains the gradient by generating random node values up the network conditional on lower layers, then back down to the data conditional on the upper layers.</p>
+<p>Data for either a Boltzmann  or Helmholz machine can be generated like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rRBM &lt;- function(n, Wg) {
+  X&lt;-matrix(0, n, ncol(Wg), dimnames=list(NULL,colnames(Wg)) )
+  X[,1]&lt;-1
+  for(i in Q:2 ){
+    X[, L[[i]] ] &lt;- (X %*% t(Wg))[, L[[i]] ]
+    X[, L[[i]] ] &lt;- matrix( rbinom(prod(dim(X[, L[[i]] ])), size=1, c(lgt(X[, L[[i]] ])) ),dim(X[, L[[i]] ])[1],dim(X[, L[[i]] ])[2] )
+  }
+  return(X)
+}
+</code></pre></div><p>where <code>Wg</code> is an adjacency matrix for the entire network, including both observed and hidden nodes.
+Simulation starts from the top of the network and propagates random samples downward.</p>
+<p>The process of calculating the gradient of <code>Wg</code> is similar and uses a few variations on the same loop above.
+Starting with just the RBM for now, this code obtains the gradient by generating random node values up the network conditional on lower layers, then back down to the data conditional on the upper layers.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">calcGrad &lt;- function(X, Wr, Wg) {
   Gr &lt;- Gr2 &lt;- Wr
   for (i in 3:Q) {
@@ -290,7 +303,8 @@ This approach is slow because it is in R and it involves a lot of unnecessary co
 }
 </code></pre></div><p>I regret that R lists subscript with double brackets <code>[[]]</code> so they kind of dominate the code. I guess the rest of it is pretty ugly too.</p>
 <p>This next bit is the essential loop for updating.
-In the RBM, the weights for going up and down the network are not actually different, and you can see here that I&rsquo;m training the generative weight matrix <code>Wg</code> with the transposed gradient of <code>Wr</code>.</p>
+In the RBM, the weights for going up and down the network are not actually different.
+You can see here that I&rsquo;m training the generative weight matrix <code>Wg</code> by just taking the transposed gradient of <code>Wr</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">for (i in 1:nIter) {
   Gr &lt;- calcGrad(X[sample(1:nrow(X),size=500,replace=F),], Wr, Wg)
   Gg &lt;- Gr
@@ -299,9 +313,8 @@ In the RBM, the weights for going up and down the network are not actually diffe
   MSg &lt;- MSg * momentum + Gg
   Wr[Wr != 0] &lt;- Wr[Wr != 0] + MSr[Wr != 0] * lrate
   Wg[Wg != 0] &lt;- Wg[Wg != 0] + MSg[Wg != 0] * lrate
-  diag(Wg) &lt;- Wg.diag
   ...
-</code></pre></div><p>Taking the redacted correlation matrix of the data-generating node weights with those estimated:</p>
+</code></pre></div><p>For the RBM with one layer, I could simply take the redacted correlation matrix of the data-generating node weights with those estimated:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    h1_1 h1_2 h1_3  h1_4 h1_5  h1_6 h1_7 h1_8
 h1_1      0.99                                
 h1_2           0.98                           
@@ -327,7 +340,9 @@ h1_7      0.98
 h1_8                           0.99          
 
 Iteration 3325
-</code></pre></div>
+</code></pre></div><p>However, including any additional layers results in different solutions at the first layer and I lose these correlations.
+In another post I will go through my HM code, which gave much better results.</p>
+
     </div>
 
     
