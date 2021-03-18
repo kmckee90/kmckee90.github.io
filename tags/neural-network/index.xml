@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>code on Kevin McKee</title>
-    <link>https://kmckee90.github.io/tags/code/</link>
-    <description>Recent content in code on Kevin McKee</description>
+    <title>neural network on Kevin McKee</title>
+    <link>https://kmckee90.github.io/tags/neural-network/</link>
+    <description>Recent content in neural network on Kevin McKee</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Wed, 17 Mar 2021 18:55:25 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Mar 2021 18:55:25 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Restricted Boltzmann Machine in R</title>
       <link>https://kmckee90.github.io/post/rbm1/</link>
@@ -17,16 +17,6 @@
       <description>github source for this project
 I&amp;rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine. There isn&amp;rsquo;t much implementation of these in R, but I did find this tutorial. Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.
 The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &amp;ldquo;dreaming&amp;rdquo; fake data during the sleep phase of the wake-sleep algorithm.</description>
-    </item>
-    
-    <item>
-      <title>Code</title>
-      <link>https://kmckee90.github.io/page/code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kmckee90@gmail.com (Kevin McKee)</author>
-      <guid>https://kmckee90.github.io/page/code/</guid>
-      <description>All coding projects can be found on github. The links to posts for each project should show up under &amp;ldquo;See Also&amp;rdquo; on this page.
-Some of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy. I&amp;rsquo;ll be in the process of cleaning them up as I write about them.</description>
     </item>
     
   </channel>

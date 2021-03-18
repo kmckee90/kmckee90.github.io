@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Fri, 12 Mar 2021 21:40:23 -0500</lastBuildDate><atom:link href="https://kmckee90.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Mar 2021 18:55:25 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Restricted Boltzmann Machine in R</title>
+      <link>https://kmckee90.github.io/post/rbm1/</link>
+      <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/rbm1/</guid>
+      <description>github source for this project
+I&amp;rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine. There isn&amp;rsquo;t much implementation of these in R, but I did find this tutorial. Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.
+The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &amp;ldquo;dreaming&amp;rdquo; fake data during the sleep phase of the wake-sleep algorithm.</description>
+    </item>
+    
     <item>
       <title>Painting a harpsichord lid</title>
       <link>https://kmckee90.github.io/post/harpsichordprocess/</link>

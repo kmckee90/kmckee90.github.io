@@ -7,9 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Code - Kevin McKee</title>
-  <meta name="description" content="All coding projects can be found on github. The links to posts for each project should show up under &ldquo;See Also&rdquo; on this page.
-Some of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy. I&rsquo;ll be in the process of cleaning them up as I write about them.">
+  <title>A Restricted Boltzmann Machine in R - Kevin McKee</title>
+  <meta name="description" content="github source for this project
+I&rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine. There isn&rsquo;t much implementation of these in R, but I did find this tutorial. Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.
+The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &ldquo;dreaming&rdquo; fake data during the sleep phase of the wake-sleep algorithm.">
   <meta name="author" content="Kevin McKee"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -45,8 +46,8 @@ Some of my projects are completely lacking in annotations, full of commented out
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/kmckee90.github.io\/page\/code\/",
-          "name": "Code"
+          "@id": "https:\/\/kmckee90.github.io\/post\/rbm1\/",
+          "name": "A restricted boltzmann machine in r"
         }
     }]
 }
@@ -57,15 +58,15 @@ Some of my projects are completely lacking in annotations, full of commented out
   "author": {
     "name" : "Kevin McKee"
   },
-  "headline": "Code",
-  "description" : "All coding projects can be found on github. The links to posts for each project should show up under \u0026ldquo;See Also\u0026rdquo; on this page.\nSome of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy. I\u0026rsquo;ll be in the process of cleaning them up as I write about them.",
+  "headline": "A Restricted Boltzmann Machine in R",
+  "description" : "github source for this project\nI\u0026rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine. There isn\u0026rsquo;t much implementation of these in R, but I did find this tutorial. Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.\nThe difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by \u0026ldquo;dreaming\u0026rdquo; fake data during the sleep phase of the wake-sleep algorithm.",
   "inLanguage" : "en",
-  "wordCount":  56 ,
-  "datePublished" : "0001-01-01T00:00:00",
-  "dateModified" : "0001-01-01T00:00:00",
+  "wordCount":  853 ,
+  "datePublished" : "2021-03-17T18:55:25",
+  "dateModified" : "2021-03-17T18:55:25",
   "image" : "https:\/\/kmckee90.github.io",
-  "keywords" : [ "code" ],
-  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/page\/code\/",
+  "keywords" : [ "code, rbm, boltzmann, neural network" ],
+  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/post\/rbm1\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/kmckee90.github.io",
@@ -79,16 +80,17 @@ Some of my projects are completely lacking in annotations, full of commented out
 }
 </script>
 
-<meta property="og:title" content="Code" />
-<meta property="og:description" content="All coding projects can be found on github. The links to posts for each project should show up under &ldquo;See Also&rdquo; on this page.
-Some of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy. I&rsquo;ll be in the process of cleaning them up as I write about them.">
-<meta property="og:url" content="https://kmckee90.github.io/page/code/" />
+<meta property="og:title" content="A Restricted Boltzmann Machine in R" />
+<meta property="og:description" content="github source for this project
+I&rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine. There isn&rsquo;t much implementation of these in R, but I did find this tutorial. Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.
+The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &ldquo;dreaming&rdquo; fake data during the sleep phase of the wake-sleep algorithm.">
+<meta property="og:url" content="https://kmckee90.github.io/post/rbm1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kevin McKee" />
 
-  <meta name="twitter:title" content="Code" />
-  <meta name="twitter:description" content="All coding projects can be found on github. The links to posts for each project should show up under &ldquo;See Also&rdquo; on this page.
-Some of my projects are completely lacking in annotations, …">
+  <meta name="twitter:title" content="A Restricted Boltzmann Machine in R" />
+  <meta name="twitter:description" content="github source for this project
+I&rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.81.0" />
   <link rel="alternate" href="https://kmckee90.github.io/index.xml" type="application/rss+xml" title="Kevin McKee"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -264,14 +266,27 @@ Some of my projects are completely lacking in annotations, …">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
+            <div class="post-heading">
               
-                <h1>Code</h1>
-              
-              
-                <hr class="small">
+                <h1>A Restricted Boltzmann Machine in R</h1>
               
               
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 17, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -286,16 +301,104 @@ Some of my projects are completely lacking in annotations, …">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>All coding projects can be found on <a href="https://github.com/kmckee90/">github</a>.
-The links to posts for each project should show up under &ldquo;See Also&rdquo; on this page.</p>
-<p>Some of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy.
-I&rsquo;ll be in the process of cleaning them up as I write about them.</p>
+        <p><a href="https://github.com/kmckee90/Neural_Nets_in_R/blob/main/Boltzmann.R">github source for this project</a></p>
+<p>I&rsquo;ve taken an interest in a succession of binary network models: the hopfield network, Boltzmann Machine, the Restricted Boltzmann Machine (RBM), and the Helmholtz Machine.
+There isn&rsquo;t much implementation of these in R, but I did find <a href="https://www.r-bloggers.com/2013/01/restricted-boltzmann-machines-in-r/">this tutorial</a>.
+Each model in some way learns the joint probability distribution of many binary variables using binary hidden nodes.</p>
+<p>The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &ldquo;dreaming&rdquo; fake data during the sleep phase of the wake-sleep algorithm.
+The solution of a Helmholtz Machine is supposed to minimize the Kullbeck-Liebler divergence of the real data and the generative distribution.
+In a way that I don&rsquo;t fully understand yet, this leads to learning deeper hidden structure that better matches the data-generating structure.
+I found through this project that the boltzmann machine with more than one layer is more likely than not to fall into a local solution that looks nothing like the data-generating network.</p>
+<p>My goal was to learn about both models by coding them from scratch in R. Then I could test the difference for myself.
+As the example code that I found was not abstracted to take any model dimensions (number of layers, nodes per each layer), I had to think of a way to do this that would allow quick and convenient manipulations.
+I decided to set up a list object <strong>L</strong>  containing the name and location of each part of the model:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; L
+[[1]]
+[1] &#34;bias&#34;
 
+[[2]]
+ [1] &#34;x1&#34;  &#34;x2&#34;  &#34;x3&#34;  &#34;x4&#34;  &#34;x5&#34;  &#34;x6&#34;  &#34;x7&#34;  &#34;x8&#34;  &#34;x9&#34;  &#34;x10&#34; &#34;x11&#34; &#34;x12&#34; &#34;x13&#34; &#34;x14&#34; &#34;x15&#34; &#34;x16&#34; &#34;x17&#34; &#34;x18&#34; &#34;x19&#34; &#34;x20&#34;
+
+[[3]]
+[1] &#34;h1_1&#34; &#34;h1_2&#34; &#34;h1_3&#34; &#34;h1_4&#34; &#34;h1_5&#34; &#34;h1_6&#34; &#34;h1_7&#34; &#34;h1_8&#34;
+</code></pre></div><p>The top level indices (1-3) are the layers, and the strings within each are the names of nodes.
+This way, I could set up the network as one big adjacency matrix with contents of <strong>L</strong> as dimnames (inspired by the RAM notation of structural equation models).
+Then, I could code the entire thing with simple matrix multiplications while using <strong>L</strong> to index block sub-matrices representing the connections between layers.
+This approach is slow because it is in R and it involves a lot of unnecessary computations over all the zero-values, but it seemed like a balance between making the code abstract and concise.</p>
+<p>Starting with just the RBM for now, this code obtains the gradient by generating random node values up the network conditional on lower layers, then back down to the data conditional on the upper layers.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">calcGrad &lt;- function(X, Wr, Wg) {
+  Gr &lt;- Gr2 &lt;- Wr
+  for (i in 3:Q) {
+    X[, L[[i]]] &lt;- (X %*% t(Wr))[, L[[i]]]
+    X[, L[[i]]] &lt;-  matrix(rbinom(prod(dim(X[, L[[i]]])), size = 1, c(lgt(X[, L[[i]]]))), dim(X[, L[[i]]])[1], dim(X[, L[[i]]])[2])
+    Gr[L[[i]], unlist(L[c(1, i - 1)])] &lt;- (t(X) %*% X / nrow(X))[L[[i]], unlist(L[c(1, i - 1)])]
+  }
+  Gr[L[[2]], L[[1]]] &lt;- (t(X) %*% X / nrow(X))[L[[2]], L[[1]]]
+  X2 &lt;- X
+  for (i in (Q - 1):2) {
+    X2[, L[[i]]] &lt;- (X2 %*% t(Wg))[, L[[i]]]
+    X2[, L[[i]]] &lt;-  matrix(rbinom(prod(dim(X2[, L[[i]]])), size = 1, c(lgt(X2[, L[[i]]]))), dim(X2[, L[[i]]])[1], dim(X2[, L[[i]]])[2])
+  }
+  for (i in 3:Q) {
+    X2[, L[[i]]] &lt;-  lgt( (X2 %*% t(Wr))[, L[[i]] ] ) 
+    if(i&lt;Q) X2[, L[[i]]] &lt;- matrix(rbinom(prod(dim(X2[, L[[i]]])), size = 1, c( X2[, L[[i]]] )), dim(X2[, L[[i]]])[1], dim(X2[, L[[i]]])[2])
+    Gr2[L[[i]], unlist(L[c(1, i - 1)])] &lt;- (t(X2) %*% X2 / nrow(X))[L[[i]], unlist(L[c(1, i - 1)])]
+  }
+  Gr2[L[[2]], L[[1]]] &lt;- (t(X2) %*% X2 / nrow(X) )[L[[2]], L[[1]]]
+  dG &lt;- Gr - Gr2
+  return(dG)
+}
+</code></pre></div><p>I regret that R lists subscript with double brackets <code>[[]]</code> so they kind of dominate the code. I guess the rest of it is pretty ugly too.</p>
+<p>This next bit is the essential loop for updating.
+In the RBM, the weights for going up and down the network are not actually different, and you can see here that I&rsquo;m training the generative weight matrix <code>Wg</code> with the transposed gradient of <code>Wr</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">for (i in 1:nIter) {
+  Gr &lt;- calcGrad(X[sample(1:nrow(X),size=500,replace=F),], Wr, Wg)
+  Gg &lt;- Gr
+  Gg[-1, -1] &lt;- t(Gr)[-1, -1]
+  MSr &lt;- MSr * momentum + Gr  
+  MSg &lt;- MSg * momentum + Gg
+  Wr[Wr != 0] &lt;- Wr[Wr != 0] + MSr[Wr != 0] * lrate
+  Wg[Wg != 0] &lt;- Wg[Wg != 0] + MSg[Wg != 0] * lrate
+  diag(Wg) &lt;- Wg.diag
+  ...
+</code></pre></div><p>Taking the redacted correlation matrix of the data-generating node weights with those estimated:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    h1_1 h1_2 h1_3  h1_4 h1_5  h1_6 h1_7 h1_8
+h1_1      0.99                                
+h1_2           0.98                           
+h1_3                -0.98                     
+h1_4                                          
+h1_5                           -0.97          
+h1_6                                      0.98
+h1_7 0.98                                     
+h1_8                                 0.98     
+
+Iteration 7100
+</code></pre></div><p>This was the result after running for a few seconds. Not bad, but I noticed that it seems to miss one node on most attempts.
+And without any <em>a priori</em> constraints or priors in the model, we should expect the nodes to be permuted and flipped like that.</p>
+<p>A second run yielded better results:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">     h1_1 h1_2 h1_3 h1_4  h1_5 h1_6 h1_7 h1_8
+h1_1                                0.99     
+h1_2           0.99                          
+h1_3                0.99                     
+h1_4                     -0.98               
+h1_5                                     0.99
+h1_6 0.98                                    
+h1_7      0.98                               
+h1_8                           0.99          
+
+Iteration 3325
+</code></pre></div>
 
         
           <div class="blog-tags">
             
               <a href="https://kmckee90.github.io/tags/code/">code</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/rbm/">rbm</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/boltzmann/">boltzmann</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/neural-network/">neural network</a>&nbsp;
             
           </div>
         
@@ -310,42 +413,42 @@ I&rsquo;ll be in the process of cleaning them up as I write about them.</p>
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;text=Code&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frbm1%2f&amp;text=A%20Restricted%20Boltzmann%20Machine%20in%20R&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpost%2frbm1%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;title=Code" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frbm1%2f&amp;title=A%20Restricted%20Boltzmann%20Machine%20in%20R" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;title=Code" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frbm1%2f&amp;title=A%20Restricted%20Boltzmann%20Machine%20in%20R" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;title=Code" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frbm1%2f&amp;title=A%20Restricted%20Boltzmann%20Machine%20in%20R" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;description=Code" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frbm1%2f&amp;description=A%20Restricted%20Boltzmann%20Machine%20in%20R" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -367,7 +470,7 @@ I&rsquo;ll be in the process of cleaning them up as I write about them.</p>
                   <ul>
                 
                 
-                    <li><a href="/post/rbm1/">A Restricted Boltzmann Machine in R</a></li>
+                    <li><a href="/page/code/">Code</a></li>
                 
               </ul>
 
@@ -376,8 +479,20 @@ I&rsquo;ll be in the process of cleaning them up as I write about them.</p>
       </article>
 
       
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://kmckee90.github.io/post/harpsichordprocess/" data-toggle="tooltip" data-placement="top" title="Painting a harpsichord lid">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
 
 
+      
+        
+        
       
 
     </div>
@@ -385,14 +500,6 @@ I&rsquo;ll be in the process of cleaning them up as I write about them.</p>
 </div>
 
       
-    <div class="page-meta">
-  
-  
-  
-</div>
-
-
-  
 <footer>
   <div class="container">
     <div class="row">
