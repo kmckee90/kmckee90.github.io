@@ -19,15 +19,5 @@ I&amp;rsquo;ve taken an interest in a succession of binary network models: the h
 The difference between the RBM and the Helmholtz machine is the former uses a kind of Gibbs sampling of the hidden states to compute gradients of node weights, whereas the ladder is a generative network that learns by &amp;ldquo;dreaming&amp;rdquo; fake data during the sleep phase of the wake-sleep algorithm.</description>
     </item>
     
-    <item>
-      <title>Code</title>
-      <link>https://kmckee90.github.io/page/code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kmckee90@gmail.com (Kevin McKee)</author>
-      <guid>https://kmckee90.github.io/page/code/</guid>
-      <description>All coding projects can be found on github. The links to posts for each project should show up under &amp;ldquo;See Also&amp;rdquo; on this page.
-Some of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy. I&amp;rsquo;ll be in the process of cleaning them up as I write about them.</description>
-    </item>
-    
   </channel>
 </rss>
