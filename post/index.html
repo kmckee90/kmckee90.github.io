@@ -257,7 +257,7 @@ We are essentially talking about structural equation modeling with discrete dist
 <ul>
 <li>Non-Gaussian factor indicators</li>
 <li>of which there are a large number (&raquo;20) arising from questionnaire data,</li>
-<li>each having many thresholds 5 or more thresholds, as a common property of Likert-type response formats,</li>
+<li>each having 5 or more response categories, as a common property of Likert scales,</li>
 <li>And latent variable interactions, because everyone wants to know if their variables involve moderation.</li>
 </ul>
 <p>And a bonus idea: when there are a large number of indicators and we are assuming that they function similarly in representing the factor, we can model the distribution of the factor loadings and perhaps gain a little extra power to estimate them.
@@ -366,10 +366,10 @@ No higher order moments necessary!</p>
     </p>
     <div class="post-entry">
         <p>There are so many factor analyses in the world and so few actually normally variables.
-Although Stan makes it easy to change up the distributions to whatever you want, I have not seen much careful tailoring of residual distributions in medical or Psychological research,
-and it&rsquo;s probably because it&rsquo;s not possible or easy with most software.
-Because of that, it may not be common knowledge yet that you can use MCMC to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.
-For Stan users, this will be trivial, but a simple demo to that effect would have helped me.
+I have not seen much careful tailoring of residual distributions in medical or psychological research.
+It is probably because most software don&rsquo;t support it or make it convenient.
+It was a revelation to me that you can use Markov Chain Monte Carlo (MCMC) to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.
+For Stan users, this will be trivial, but I know that I would have benefitted from a simple demo earlier on.
 So that&rsquo;s what I&rsquo;m posting here.</p>
 <p>In R, a non-normal factor can be simulated this way:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">f&lt;-rnorm(n) #latent factor
