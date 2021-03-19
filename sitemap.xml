@@ -3,8 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kmckee90.github.io/</loc>
-    <lastmod>2021-03-17T18:55:25-04:00</lastmod>
+    <lastmod>2021-03-18T16:49:12-04:00</lastmod>
     <priority>0</priority>
+  </url><url>
+    <loc>https://kmckee90.github.io/post/hm1/</loc>
+    <lastmod>2021-03-18T16:49:12-04:00</lastmod>
+  </url><url>
+    <loc>https://kmckee90.github.io/post/</loc>
+    <lastmod>2021-03-18T16:49:12-04:00</lastmod>
   </url><url>
     <loc>https://kmckee90.github.io/post/rbm1/</loc>
     <lastmod>2021-03-17T18:55:25-04:00</lastmod>
@@ -16,9 +22,6 @@
     <lastmod>2021-03-17T18:55:25-04:00</lastmod>
   </url><url>
     <loc>https://kmckee90.github.io/tags/neural-network/</loc>
-    <lastmod>2021-03-17T18:55:25-04:00</lastmod>
-  </url><url>
-    <loc>https://kmckee90.github.io/post/</loc>
     <lastmod>2021-03-17T18:55:25-04:00</lastmod>
   </url><url>
     <loc>https://kmckee90.github.io/tags/rbm/</loc>

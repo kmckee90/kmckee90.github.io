@@ -209,7 +209,7 @@
           
             <article class="post-preview">
     <a href="https://kmckee90.github.io/post/rbm1/">
-        <h2 class="post-title">A Restricted Boltzmann Machine in R</h2>
+        <h2 class="post-title">Binary neural nets in R, part 1: Restricted Boltzmann Machine</h2>
         
         
         
@@ -314,7 +314,7 @@ You can see here that I&rsquo;m training the generative weight matrix <code>Wg</
   Wr[Wr != 0] &lt;- Wr[Wr != 0] + MSr[Wr != 0] * lrate
   Wg[Wg != 0] &lt;- Wg[Wg != 0] + MSg[Wg != 0] * lrate
   ...
-</code></pre></div><p>For the RBM with one layer, I could simply take the redacted correlation matrix of the data-generating node weights with those estimated:</p>
+</code></pre></div><p>For the RBM with one layer, I could simply take the redacted correlation matrix (showing |r|&gt;.7 only) of the data-generating node weights with those estimated:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    h1_1 h1_2 h1_3  h1_4 h1_5  h1_6 h1_7 h1_8
 h1_1      0.99                                
 h1_2           0.98                           

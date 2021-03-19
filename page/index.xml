@@ -52,7 +52,7 @@ Interests Psychology My undergraduate degree is in Psychology but I have not car
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/page/code/</guid>
       <description>Projects:
- A Restricted Boltzmann Machine in R  All coding projects can be found on github. The links to posts for each project should show up under &amp;ldquo;See Also&amp;rdquo; on this page.
+ Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  All coding projects can be found on github. The links to posts for each project should show up under &amp;ldquo;See Also&amp;rdquo; on this page.
 Some of my projects are completely lacking in annotations, full of commented out zombie code, and generally messy. I&amp;rsquo;ll be in the process of cleaning them up as I write about them.</description>
     </item>
     

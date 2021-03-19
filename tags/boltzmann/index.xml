@@ -9,7 +9,7 @@
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
     <lastBuildDate>Wed, 17 Mar 2021 18:55:25 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/boltzmann/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Restricted Boltzmann Machine in R</title>
+      <title>Binary neural nets in R, part 1: Restricted Boltzmann Machine</title>
       <link>https://kmckee90.github.io/post/rbm1/</link>
       <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
