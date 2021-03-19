@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Fri, 19 Mar 2021 08:55:22 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 10:11:35 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding MCMC and autodifferentiation</title>
+      <link>https://kmckee90.github.io/post/edu1/</link>
+      <pubDate>Fri, 19 Mar 2021 10:11:35 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/edu1/</guid>
+      <description>In putting together educational materials related to Stan and posterior sampling, I remembered two good ones.
+The MCMC interactive gallery is the best set of MCMC visualizations I&amp;rsquo;ve found.
+Stan uses NUTS, so it has to calculate numerous gradients for each new sample and does so by autodifferentiation. I recommend this video for understanding autodiff. It helps a lot to know what Stan is doing with the model code to avoid giving it more work than necessary.</description>
+    </item>
+    
     <item>
       <title>Stan: Structural Ordinal Item Response Theory with a Latent Interaction</title>
       <link>https://kmckee90.github.io/post/ordinalirt/</link>

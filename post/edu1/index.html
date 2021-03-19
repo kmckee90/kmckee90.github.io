@@ -7,9 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Stan: Structural Ordinal Item Response Theory with a Latent Interaction - Kevin McKee</title>
-  <meta name="description" content="The Non-Gaussian factor model introduces the idea of using other distributions for a factor analysis. But that code is not very generalized, and in reality we&rsquo;ll tend to need something more like structural equation modeling with non-Gaussian variables.
-The name for a factor model with logit-linked indicators, whether dichotomous or ordinal, is Item Response Theory. It has been used for decades to develop instruments and in particular, tests. Because of its history, factor loadings are called the &ldquo;discrimination&rdquo; parameters, intercepts are the item &ldquo;difficulty&rdquo;, and the factor scores represent each person&rsquo;s &ldquo;ability&rdquo;.">
+  <title>Understanding MCMC and autodifferentiation - Kevin McKee</title>
+  <meta name="description" content="In putting together educational materials related to Stan and posterior sampling, I remembered two good ones.
+The MCMC interactive gallery is the best set of MCMC visualizations I&rsquo;ve found.
+Stan uses NUTS, so it has to calculate numerous gradients for each new sample and does so by autodifferentiation. I recommend this video for understanding autodiff. It helps a lot to know what Stan is doing with the model code to avoid giving it more work than necessary.">
   <meta name="author" content="Kevin McKee"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -45,8 +46,8 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/kmckee90.github.io\/post\/ordinalirt\/",
-          "name": "Stan structural ordinal item response theory with a latent interaction"
+          "@id": "https:\/\/kmckee90.github.io\/post\/edu1\/",
+          "name": "Understanding MC MC and autodifferentiation"
         }
     }]
 }
@@ -57,15 +58,15 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
   "author": {
     "name" : "Kevin McKee"
   },
-  "headline": "Stan: Structural Ordinal Item Response Theory with a Latent Interaction",
-  "description" : "The Non-Gaussian factor model introduces the idea of using other distributions for a factor analysis. But that code is not very generalized, and in reality we\u0026rsquo;ll tend to need something more like structural equation modeling with non-Gaussian variables.\nThe name for a factor model with logit-linked indicators, whether dichotomous or ordinal, is Item Response Theory. It has been used for decades to develop instruments and in particular, tests. Because of its history, factor loadings are called the \u0026ldquo;discrimination\u0026rdquo; parameters, intercepts are the item \u0026ldquo;difficulty\u0026rdquo;, and the factor scores represent each person\u0026rsquo;s \u0026ldquo;ability\u0026rdquo;.",
+  "headline": "Understanding MCMC and autodifferentiation",
+  "description" : "In putting together educational materials related to Stan and posterior sampling, I remembered two good ones.\nThe MCMC interactive gallery is the best set of MCMC visualizations I\u0026rsquo;ve found.\nStan uses NUTS, so it has to calculate numerous gradients for each new sample and does so by autodifferentiation. I recommend this video for understanding autodiff. It helps a lot to know what Stan is doing with the model code to avoid giving it more work than necessary.",
   "inLanguage" : "en",
-  "wordCount":  522 ,
-  "datePublished" : "2021-03-19T08:55:22",
-  "dateModified" : "2021-03-19T08:55:22",
+  "wordCount":  77 ,
+  "datePublished" : "2021-03-19T10:11:35",
+  "dateModified" : "2021-03-19T10:11:35",
   "image" : "https:\/\/kmckee90.github.io",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/post\/ordinalirt\/",
+  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/post\/edu1\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/kmckee90.github.io",
@@ -79,15 +80,18 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
 }
 </script>
 
-<meta property="og:title" content="Stan: Structural Ordinal Item Response Theory with a Latent Interaction" />
-<meta property="og:description" content="The Non-Gaussian factor model introduces the idea of using other distributions for a factor analysis. But that code is not very generalized, and in reality we&rsquo;ll tend to need something more like structural equation modeling with non-Gaussian variables.
-The name for a factor model with logit-linked indicators, whether dichotomous or ordinal, is Item Response Theory. It has been used for decades to develop instruments and in particular, tests. Because of its history, factor loadings are called the &ldquo;discrimination&rdquo; parameters, intercepts are the item &ldquo;difficulty&rdquo;, and the factor scores represent each person&rsquo;s &ldquo;ability&rdquo;.">
-<meta property="og:url" content="https://kmckee90.github.io/post/ordinalirt/" />
+<meta property="og:title" content="Understanding MCMC and autodifferentiation" />
+<meta property="og:description" content="In putting together educational materials related to Stan and posterior sampling, I remembered two good ones.
+The MCMC interactive gallery is the best set of MCMC visualizations I&rsquo;ve found.
+Stan uses NUTS, so it has to calculate numerous gradients for each new sample and does so by autodifferentiation. I recommend this video for understanding autodiff. It helps a lot to know what Stan is doing with the model code to avoid giving it more work than necessary.">
+<meta property="og:url" content="https://kmckee90.github.io/post/edu1/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kevin McKee" />
 
-  <meta name="twitter:title" content="Stan: Structural Ordinal Item Response Theory with a Latent …" />
-  <meta name="twitter:description" content="The Non-Gaussian factor model introduces the idea of using other distributions for a factor analysis. But that code is not very generalized, and in reality we&rsquo;ll tend to need something more like …">
+  <meta name="twitter:title" content="Understanding MCMC and autodifferentiation" />
+  <meta name="twitter:description" content="In putting together educational materials related to Stan and posterior sampling, I remembered two good ones.
+The MCMC interactive gallery is the best set of MCMC visualizations I&rsquo;ve found.
+Stan …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.81.0" />
   <link rel="alternate" href="https://kmckee90.github.io/index.xml" type="application/rss+xml" title="Kevin McKee"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -238,7 +242,7 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Stan: Structural Ordinal Item Response Theory with a Latent Interaction</h1>
+                <h1>Understanding MCMC and autodifferentiation</h1>
               
               
               
@@ -249,7 +253,7 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
   <i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2021
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
   
@@ -271,95 +275,12 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>The <a href="/post/nongaussfa/">Non-Gaussian factor model</a> introduces the idea of using other distributions for a factor analysis.
-But that code is not very generalized, and in reality we&rsquo;ll tend to need something more like structural equation modeling with non-Gaussian variables.</p>
-<p>The name for a factor model with logit-linked indicators, whether dichotomous or ordinal, is Item Response Theory.
-It has been used for decades to develop instruments and in particular, tests.
-Because of its history, factor loadings are called the &ldquo;discrimination&rdquo; parameters, intercepts are the item &ldquo;difficulty&rdquo;, and the factor scores represent each person&rsquo;s &ldquo;ability&rdquo;.</p>
-<p>I do not know if there&rsquo;s a cool brand name for IRT where multiple latent variables go on to have structure amongst themselves.
-But it seems useful to establish the possibility.
-We are essentially talking about structural equation modeling with discrete distributions.</p>
-<p>I wrote a model to explore a number of difficult computing challenges related to that pursuit and common to the kinds of analysis requests that I get:</p>
-<ul>
-<li>Non-Gaussian factor indicators</li>
-<li>of which there are a large number (&raquo;20) arising from questionnaire data,</li>
-<li>each having 5 or more response categories, as a common property of Likert scales,</li>
-<li>And latent variable interactions, because everyone wants to know if their variables involve moderation.</li>
-</ul>
-<p>And a bonus idea: when there are a large number of indicators and we are assuming that they function similarly in representing the factor, we can model the distribution of the factor loadings and perhaps gain a little extra power to estimate them.
-The discrimination parameters in IRT tend to be the least precise.</p>
-<p>So here is a model that addresses all of that, first with simulation of the data:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">D&lt;-4 #Number of factors
-Q&lt;-50 #Indicators per factor
-K&lt;-7 #Levels per indicator
-N&lt;-600 #Sample size
-
-
-z&lt;-matrix(NA, N, D)
-z[,1]&lt;-rnorm(N) 
-z[,4]&lt;-rnorm(N) 
-z[,2]&lt;-rnorm(N) + .3*z[,1]
-z[,3]&lt;-rnorm(N) + 2.5*z[,1] + .3*z[,2] + 2*z[,4]*z[,1]
-
-pairs(z)
-
-#I know, this is actually a probit model. 
-dat&lt;-array(NA, dim=c(N,D,Q))
-for(d in 1:D){
-  for(q in 1:Q){
-    dat[,d,q]&lt;- findInterval( rnorm(1,1,.05)*z[,d] + rnorm(N), seq(-1, 2, l=K-1) )+1
-  }
-}
-</code></pre></div><p>And then the Stan code:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">functions{
-}
-data {
-  int&lt;lower=0&gt; N; 	 //sample size
-  int&lt;lower=1&gt; D; 	 //num factors
-  int&lt;lower=1&gt; Q;	 //num indicators per factor
-  int&lt;lower=2&gt; K; 	 //num levels
-  int&lt;lower=1,upper=K&gt; y[N, D, Q];
-}
-parameters {
-  matrix[Q,D] lambda_z;
-  ordered[K-1] c[Q, D];
-  matrix[N,D] z;
-  real beta[3];
-  real alpha;
-  
-//optional multi-level distribution of discrimination parameters, helpful for smaller samples but many indicators
-  real&lt;lower=0&gt; lambda_mu;
-  real&lt;lower=0&gt; lambda_sd;
-}
-transformed parameters{
-//centered parameterization for discrimination parameters
-	matrix[Q,D] lambda = lambda_z*lambda_sd + lambda_mu;
-}
-model {
-	z[,1] ~ std_normal();
-	z[,4] ~ std_normal();
-	z[,2] ~ normal(beta[1]*z[,1], 1.0);
-	z[,3] ~ normal(beta[2]*z[,1] + beta[3]*z[,2] + alpha*(z[,1].*z[,4]), 1.0);
-	
-	for(d in 1:D){
-		for(q in 1:Q){
-			for(n in 1:N){
-			y[n, d, q] ~ ordered_logistic( z[n,d] * lambda[q, d], c[q, d]);
-			}
-		 }
-		 lambda_z[,d] ~ std_normal();
-	}
-
-//optional priors	
-  lambda_sd ~ normal(0, 5.0);
-  lambda_mu ~ normal(0, 5.0);
-  beta ~ normal(0.0,5.0);
-  alpha ~ normal(0.0,5.0);
-}
-</code></pre></div><p>Note certain features include grouping variables together into matrices instead of inputting them one by one, centered factor loadings (&ldquo;discrimination&rdquo; parameters) with a shared mean and standard deviation.
-Most important for me was achievement of latent interaction by element-wise multiplication of the z-score vectors <code>alpha*(z[,1].*z[,4])</code>.
-No higher order moments necessary!</p>
-
+        <p>In putting together educational materials related to Stan and posterior sampling, I remembered two good ones.</p>
+<p>The <a href="https://chi-feng.github.io/mcmc-demo/app.html">MCMC interactive gallery</a> is the best set of MCMC visualizations I&rsquo;ve found.</p>
+<p>Stan uses NUTS, so it has to calculate numerous gradients for each new sample and does so by autodifferentiation.
+I recommend <a href="https://www.youtube.com/embed/wG_nF1awSSY">this video</a> for understanding autodiff.
+It helps a lot to know what Stan is doing with the model code to avoid giving it more work than necessary.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wG_nF1awSSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         
 
@@ -373,42 +294,42 @@ No higher order moments necessary!</p>
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fordinalirt%2f&amp;text=Stan%3a%20Structural%20Ordinal%20Item%20Response%20Theory%20with%20a%20Latent%20Interaction&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fedu1%2f&amp;text=Understanding%20MCMC%20and%20autodifferentiation&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpost%2fordinalirt%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpost%2fedu1%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fordinalirt%2f&amp;title=Stan%3a%20Structural%20Ordinal%20Item%20Response%20Theory%20with%20a%20Latent%20Interaction" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fedu1%2f&amp;title=Understanding%20MCMC%20and%20autodifferentiation" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fordinalirt%2f&amp;title=Stan%3a%20Structural%20Ordinal%20Item%20Response%20Theory%20with%20a%20Latent%20Interaction" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fedu1%2f&amp;title=Understanding%20MCMC%20and%20autodifferentiation" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fordinalirt%2f&amp;title=Stan%3a%20Structural%20Ordinal%20Item%20Response%20Theory%20with%20a%20Latent%20Interaction" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fedu1%2f&amp;title=Understanding%20MCMC%20and%20autodifferentiation" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fordinalirt%2f&amp;description=Stan%3a%20Structural%20Ordinal%20Item%20Response%20Theory%20with%20a%20Latent%20Interaction" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fedu1%2f&amp;description=Understanding%20MCMC%20and%20autodifferentiation" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -427,13 +348,9 @@ No higher order moments necessary!</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://kmckee90.github.io/post/nongaussianfa/" data-toggle="tooltip" data-placement="top" title="Stan: Non-Normal Factor Model">&larr; Previous Post</a>
+              <a href="https://kmckee90.github.io/post/ordinalirt/" data-toggle="tooltip" data-placement="top" title="Stan: Structural Ordinal Item Response Theory with a Latent Interaction">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://kmckee90.github.io/post/edu1/" data-toggle="tooltip" data-placement="top" title="Understanding MCMC and autodifferentiation">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
