@@ -24,7 +24,7 @@ The name for a factor model with logit-linked indicators, whether dichotomous or
       <pubDate>Fri, 19 Mar 2021 08:43:04 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/post/nongaussianfa/</guid>
-      <description>There are so many factor analyses in the world and so few actually normally variables. I have not seen much careful tailoring of residual distributions in medical or psychological research. It is probably because most software don&amp;rsquo;t support it or make it convenient. It was a revelation to me that you can use Markov Chain Monte Carlo (MCMC) to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.</description>
+      <description>There are so many factor analyses in the world and so few truly normally distributed variables. I have not seen much careful tailoring of residual distributions in medical or psychological research. It is probably because most software don&amp;rsquo;t support it or make it convenient. It was a revelation to me that you can use Markov Chain Monte Carlo (MCMC) to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.</description>
     </item>
     
   </channel>
