@@ -264,8 +264,8 @@ We are essentially talking about structural equation modeling with discrete dist
 The discrimination parameters in IRT tend to be the least precise.</p>
 <p>So here is a model that addresses all of that, first with simulation of the data:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">D&lt;-4 #Number of factors
-Q&lt;-10 #Indicators per factor
-K&lt;-6 #Levels per indicator
+Q&lt;-50 #Indicators per factor
+K&lt;-7 #Levels per indicator
 N&lt;-600 #Sample size
 
 
@@ -369,14 +369,14 @@ No higher order moments necessary!</p>
 I have not seen much careful tailoring of residual distributions in medical or psychological research.
 It is probably because most software don&rsquo;t support it or make it convenient.
 It was a revelation to me that you can use Markov Chain Monte Carlo (MCMC) to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.
-For Stan users, this will be trivial, but I know that I would have benefitted from a simple demo earlier on.
+For Stan users, this will be trivial, but I know that I would have benefited from a simple demo earlier on.
 So that&rsquo;s what I&rsquo;m posting here.</p>
 <p>In R, a non-normal factor can be simulated this way:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">f&lt;-rnorm(n) #latent factor
 x1&lt;-rnorm(n, mean=.8*f, sd=.5) 
 x2&lt;-rbinom(n, size=1, p=1/(1+exp(-2*f-.5))) 
 x3&lt;-rpois(n, lambda=exp(-1 + 1.5*f)) 
-</code></pre></div><p>Here is the Stan code for a simplistic model with 3 indicators distributed as normal, bernoulli, and Poisson:</p>
+</code></pre></div><p>Here is the Stan code for a simplistic model with 3 indicators distributed as normal, Bernoulli, and Poisson:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">data { 
   int&lt;lower=0&gt; N;
   vector[N] x1;
@@ -409,7 +409,8 @@ model3.fit&lt;-sampling(model3, stan.dat,
                      chains=3, cores=3, 
                      control=list(max_treedepth=8)) #Reduced treedepth from 10 to 8 to cut down time.
 model3.draws&lt;-extract(model3.fit)
-</code></pre></div><p>Sampling <code>z</code> takes a much longer time than marginalizing over it (i.e., by using matrix decomposition algebra), of course, but I do not know how to do that without assuming the indicators are normal.</p>
+</code></pre></div><p>Sampling <code>z</code> takes a much longer time than marginalizing over it (i.e., by using matrix decomposition algebra), of course, but I do not know how to do that without assuming the indicators are normal.
+And really, most of us are not using research models to shoot down missiles or dodge pedestrians, so a little extra time to do things right is worth the payoff.</p>
 
     </div>
 
