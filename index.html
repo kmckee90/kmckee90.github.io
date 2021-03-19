@@ -281,7 +281,7 @@
   <i class="fas fa-calendar"></i>&nbsp;Posted on March 18, 2021
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
   
@@ -370,7 +370,55 @@ h2_4      -0.76
 </code></pre></div><p>Note that I had to use the first matrix to depermute the first hidden layer in order to calculate the correlations for the second hidden layer.
 It&rsquo;s missing one node on both accounts, but pretty cool to see both layers recovering the data-generating weights as promised!
 Since the learning is stochastic, it will (in theory) learn those last couple weight vectors in the course of eternity.</p>
+<p>I increased the complexity of the simulated data and the model, then left it running for a much longer time.
+It looks like it was pretty successful:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Iteration 900000 
 
+Learning rate: 0.1 
+
+Hidden Layer 1 and 2 weight vector correlations: 0.1 
+      bias h1_1  h1_2 h1_3 h1_4  h1_5 h1_6 h1_7  h1_8  h1_9 h1_10 h1_11 h1_12 h1_13 h1_14 h1_15 h1_16 h1_17 h1_18 h1_19 h1_20 h1_21 h1_22 h1_23 h1_24 h1_25 h1_26 h1_27 h1_28 h1_29 h1_30
+bias                                                                                                                                                                                     
+h1_1                                                                                                               0.98                                                                  
+h1_2                                                                                                                                                         0.93                        
+h1_3                                                                                                                                -0.99                                                
+h1_4                                                                                                                                                              -0.99                  
+h1_5                                       0.99                                                                                                                                          
+h1_6                                                  -0.99                                                                                                                              
+h1_7                                                                                                        -0.97                                                                        
+h1_8                                                                           0.98                                                                                                      
+h1_9                  0.98                                                                                                                                                               
+h1_10                                                                                                                                                                                    
+h1_11                                                                                                                                      0.98                                          
+h1_12      0.95                                                                                                                                                                          
+h1_13                                                             -0.83                                                                                                                  
+h1_14                                                                                           -0.96                                                                                    
+h1_15                                                                                                                                                  0.98                              
+h1_16                                                                                                                                                                          0.97      
+h1_17           -0.96                                                                                                                                                                    
+h1_18                                                                                                                                                                                    
+h1_19                                           -0.95                                                                                                                                    
+h1_20                                                                               -0.98                                                                                                
+h1_21                                                                    0.98                                                                                                            
+h1_22                                                       -0.96                                                                                                                        
+h1_23                           -0.98                                                                                                                                                    
+h1_24                                                                                                                          0.97                                                      
+h1_25                                                                                                                                           -0.96                                    
+h1_26                                                                                                 -0.97                                                                              
+h1_27                                                                                                                                                                                0.93
+h1_28                                                                                     -0.93                                                                                          
+h1_29                      0.98                                                                                                                                                          
+h1_30                                                                                                                                                                    0.97            
+     h2_1 h2_2 h2_3 h2_4  h2_5 h2_6  h2_7 h2_8
+h2_1                     -0.94                
+h2_2      0.87                                
+h2_3                           0.89           
+h2_4                0.89                      
+h2_5                                       0.8
+h2_6           0.96                           
+h2_7                                -0.93     
+h2_8 0.78                                     
+</code></pre></div>
     </div>
 
     
