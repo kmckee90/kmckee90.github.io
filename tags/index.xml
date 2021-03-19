@@ -7,29 +7,92 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Wed, 17 Mar 2021 18:55:25 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 10:11:35 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>boltzmann</title>
-      <link>https://kmckee90.github.io/tags/boltzmann/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
+      <title>educational</title>
+      <link>https://kmckee90.github.io/tags/educational/</link>
+      <pubDate>Fri, 19 Mar 2021 10:11:35 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
-      <guid>https://kmckee90.github.io/tags/boltzmann/</guid>
+      <guid>https://kmckee90.github.io/tags/educational/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mcmc</title>
+      <link>https://kmckee90.github.io/tags/mcmc/</link>
+      <pubDate>Fri, 19 Mar 2021 10:11:35 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/mcmc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stan</title>
+      <link>https://kmckee90.github.io/tags/stan/</link>
+      <pubDate>Fri, 19 Mar 2021 10:11:35 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/stan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code</title>
       <link>https://kmckee90.github.io/tags/code/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
+      <pubDate>Fri, 19 Mar 2021 08:55:22 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/tags/code/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>factor analysis</title>
+      <link>https://kmckee90.github.io/tags/factor-analysis/</link>
+      <pubDate>Fri, 19 Mar 2021 08:55:22 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/factor-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>irt</title>
+      <link>https://kmckee90.github.io/tags/irt/</link>
+      <pubDate>Fri, 19 Mar 2021 08:55:22 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/irt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>models</title>
+      <link>https://kmckee90.github.io/tags/models/</link>
+      <pubDate>Fri, 19 Mar 2021 08:55:22 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boltzmann</title>
+      <link>https://kmckee90.github.io/tags/boltzmann/</link>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/boltzmann/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>helmholtz</title>
+      <link>https://kmckee90.github.io/tags/helmholtz/</link>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/helmholtz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>neural network</title>
       <link>https://kmckee90.github.io/tags/neural-network/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/tags/neural-network/</guid>
       <description></description>
@@ -38,9 +101,27 @@
     <item>
       <title>rbm</title>
       <link>https://kmckee90.github.io/tags/rbm/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/tags/rbm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>art</title>
+      <link>https://kmckee90.github.io/tags/art/</link>
+      <pubDate>Fri, 12 Mar 2021 21:40:23 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>painting</title>
+      <link>https://kmckee90.github.io/tags/painting/</link>
+      <pubDate>Fri, 12 Mar 2021 21:40:23 -0500</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/painting/</guid>
       <description></description>
     </item>
     
