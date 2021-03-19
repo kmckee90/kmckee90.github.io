@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Code - Kevin McKee</title>
-  <meta name="description" content="Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy. I&rsquo;ll be in the process of curating them up as I write about them.">
+  <title>Stan: Non-Normal Factor Model - Kevin McKee</title>
+  <meta name="description" content="There are so many factor analyses in the world and so few actually normally variables. Although Stan makes it easy to change up the distributions to whatever you want, I have not seen much careful tailoring of residual distributions in medical or Psychological research, and it&rsquo;s probably because it&rsquo;s not possible or easy with most software. Because of that, it may not be common knowledge yet that you can use MCMC to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.">
   <meta name="author" content="Kevin McKee"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/kmckee90.github.io\/page\/code\/",
-          "name": "Code"
+          "@id": "https:\/\/kmckee90.github.io\/post\/nongaussianfa\/",
+          "name": "Stan non normal factor model"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : "Kevin McKee"
   },
-  "headline": "Code",
-  "description" : "Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy. I\u0026rsquo;ll be in the process of curating them up as I write about them.",
+  "headline": "Stan: Non-Normal Factor Model",
+  "description" : "There are so many factor analyses in the world and so few actually normally variables. Although Stan makes it easy to change up the distributions to whatever you want, I have not seen much careful tailoring of residual distributions in medical or Psychological research, and it\u0026rsquo;s probably because it\u0026rsquo;s not possible or easy with most software. Because of that, it may not be common knowledge yet that you can use MCMC to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.",
   "inLanguage" : "en",
-  "wordCount":  79 ,
-  "datePublished" : "0001-01-01T00:00:00",
-  "dateModified" : "0001-01-01T00:00:00",
+  "wordCount":  340 ,
+  "datePublished" : "2021-03-19T08:43:04",
+  "dateModified" : "2021-03-19T08:43:04",
   "image" : "https:\/\/kmckee90.github.io",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/page\/code\/",
+  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/post\/nongaussianfa\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/kmckee90.github.io",
@@ -78,14 +78,14 @@
 }
 </script>
 
-<meta property="og:title" content="Code" />
-<meta property="og:description" content="Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy. I&rsquo;ll be in the process of curating them up as I write about them.">
-<meta property="og:url" content="https://kmckee90.github.io/page/code/" />
+<meta property="og:title" content="Stan: Non-Normal Factor Model" />
+<meta property="og:description" content="There are so many factor analyses in the world and so few actually normally variables. Although Stan makes it easy to change up the distributions to whatever you want, I have not seen much careful tailoring of residual distributions in medical or Psychological research, and it&rsquo;s probably because it&rsquo;s not possible or easy with most software. Because of that, it may not be common knowledge yet that you can use MCMC to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.">
+<meta property="og:url" content="https://kmckee90.github.io/post/nongaussianfa/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kevin McKee" />
 
-  <meta name="twitter:title" content="Code" />
-  <meta name="twitter:description" content="Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets …">
+  <meta name="twitter:title" content="Stan: Non-Normal Factor Model" />
+  <meta name="twitter:description" content="There are so many factor analyses in the world and so few actually normally variables. Although Stan makes it easy to change up the distributions to whatever you want, I have not seen much careful …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.81.0" />
   <link rel="alternate" href="https://kmckee90.github.io/index.xml" type="application/rss+xml" title="Kevin McKee"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -234,14 +234,27 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
+            <div class="post-heading">
               
-                <h1>Code</h1>
-              
-              
-                <hr class="small">
+                <h1>Stan: Non-Normal Factor Model</h1>
               
               
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -256,19 +269,51 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <h2 id="stan-code">Stan code</h2>
-<ul>
-<li><a href="/post/nongaussianfa/">Non-Normal Factor Model</a></li>
-<li><a href="/post/ordinalirt/">Structural Ordinal Item Response Theory with a Latent Interaction</a></li>
-</ul>
-<h2 id="neural-networks">Neural networks:</h2>
-<ul>
-<li><a href="/post/rbm1/">Binary neural nets in R, part 1: Restricted Boltzmann Machine</a></li>
-<li><a href="/post/hm1/">Binary neural nets in R, part 2: Helmholtz Machine</a></li>
-</ul>
-<p>Most coding projects can be found on <a href="https://github.com/kmckee90/">github</a>.
-Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy.
-I&rsquo;ll be in the process of curating them up as I write about them.</p>
+        <p>There are so many factor analyses in the world and so few actually normally variables.
+Although Stan makes it easy to change up the distributions to whatever you want, I have not seen much careful tailoring of residual distributions in medical or Psychological research,
+and it&rsquo;s probably because it&rsquo;s not possible or easy with most software.
+Because of that, it may not be common knowledge yet that you can use MCMC to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.
+For Stan users, this will be trivial, but a simple demo to that effect would have helped me.
+So that&rsquo;s what I&rsquo;m posting here.</p>
+<p>In R, a non-normal factor can be simulated this way:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">f&lt;-rnorm(n) #latent factor
+x1&lt;-rnorm(n, mean=.8*f, sd=.5) 
+x2&lt;-rbinom(n, size=1, p=1/(1+exp(-2*f-.5))) 
+x3&lt;-rpois(n, lambda=exp(-1 + 1.5*f)) 
+</code></pre></div><p>Here is the Stan code for a simplistic model with 3 indicators distributed as normal, bernoulli, and Poisson:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">data { 
+  int&lt;lower=0&gt; N;
+  vector[N] x1;
+  int x2[N];
+  int x3[N];
+}
+parameters {
+real x1_mu;
+real&lt;lower=0&gt; x1_sd;
+real x2_mu;
+real x3_mu;
+
+real&lt;lower=0&gt; f_x1; //lower bound prevents sign indeterminacy
+real&lt;lower=0&gt; f_x2;
+real&lt;lower=0&gt; f_x3;
+vector[N] z; //Latent variable scores- i.e., person-intercepts
+}
+model {
+  z  ~ std_normal(); // N(0,1) prior for latent variables.
+  x1 ~ normal( x1_mu + f_x1 * z, x1_sd );
+  x2 ~ bernoulli( 1.0 ./( 1+exp( - f_x2 * z + x2_mu )) );
+  x3 ~ poisson( exp( x3_mu + f_x3 * z)  );
+}
+</code></pre></div><p>Note that <code>z</code> doesn&rsquo;t really need to be normally distributed either.
+Putting the above code in a string object <code>model3.src</code>, the model is then run as follows with package <code>rstan</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">model3&lt;-stan_model(model_code = model3.src)
+stan.dat&lt;-list(N=n,&#34;x1&#34;=x1,&#34;x2&#34;=x2,&#34;x3&#34;=x3)
+model3.fit&lt;-sampling(model3, stan.dat, 
+                     iter = 1500, warmup = 500, #Reducing the amount of warmup to cut down on time.
+                     chains=3, cores=3, 
+                     control=list(max_treedepth=8)) #Reduced treedepth from 10 to 8 to cut down time.
+model3.draws&lt;-extract(model3.fit)
+</code></pre></div><p>Sampling <code>z</code> takes a much longer time than marginalizing over it (i.e., by using matrix decomposition algebra), of course, but I do not know how to do that without assuming the indicators are normal.</p>
 
 
         
@@ -283,42 +328,42 @@ I&rsquo;ll be in the process of curating them up as I write about them.</p>
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;text=Code&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fnongaussianfa%2f&amp;text=Stan%3a%20Non-Normal%20Factor%20Model&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpost%2fnongaussianfa%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;title=Code" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fnongaussianfa%2f&amp;title=Stan%3a%20Non-Normal%20Factor%20Model" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;title=Code" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fnongaussianfa%2f&amp;title=Stan%3a%20Non-Normal%20Factor%20Model" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;title=Code" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fnongaussianfa%2f&amp;title=Stan%3a%20Non-Normal%20Factor%20Model" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpage%2fcode%2f&amp;description=Code" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpost%2fnongaussianfa%2f&amp;description=Stan%3a%20Non-Normal%20Factor%20Model" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -334,8 +379,24 @@ I&rsquo;ll be in the process of curating them up as I write about them.</p>
       </article>
 
       
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://kmckee90.github.io/post/hm1/" data-toggle="tooltip" data-placement="top" title="Binary neural nets in R, part 2: Helmholtz Machine">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://kmckee90.github.io/post/ordinalirt/" data-toggle="tooltip" data-placement="top" title="Stan: Structural Ordinal Item Response Theory with a Latent Interaction">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
 
 
+      
+        
+        
       
 
     </div>
@@ -343,14 +404,6 @@ I&rsquo;ll be in the process of curating them up as I write about them.</p>
 </div>
 
       
-    <div class="page-meta">
-  
-  
-  
-</div>
-
-
-  
 <footer>
   <div class="container">
     <div class="row">
