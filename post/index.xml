@@ -15,7 +15,7 @@
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/post/hm1/</guid>
       <description>github source for this project
-In the last post, I looked at coding a [restricted Boltzmann machine (RBM) in R]. In this one, I will compare the algorithm and its results to the Helmholtz Machine, which uses the wake-sleep algorithm.
+In the last post, I looked at coding a restricted Boltzmann machine (RBM) in R. In this one, I will compare the algorithm and its results to the Helmholtz Machine, which uses the wake-sleep algorithm.
 The basic idea behind the wake-sleep algorithm is that the model learns in two alternating phases. In the wake phase, random values for the hidden nodes are generated according to the expectations of the recognition network, then the generative network weights are adjusted.</description>
     </item>
     
