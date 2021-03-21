@@ -199,7 +199,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 19, 2021
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 20, 2021
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -225,6 +225,129 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://kmckee90.github.io/post/discretization/">
+        <h2 class="post-title">Discretization in 3 languages</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 20, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        <p>There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices <code>A</code>, the drift or state transition matrix, <code>B</code>, the input or covariate coefficient matrix, and <code>Q</code>, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step. The discretized matrices function like those of an autoregressive process. Some details of this approach and what this does can be found <a href="https://en.wikipedia.org/wiki/Discretization">here</a> but not exactly a complete implementation, namely with matrix <code>B</code>. So this is one of those code blocks I just have backed up in several project folders in various languages.</p>
+<h4 id="r">R:</h4>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">discretize &lt;- function(A, B, Q, deltaT){
+  deltaT &lt;- c(deltaT)
+  I &lt;- diag(ncol(A))
+  BLOCK &lt;- matrix(0, nrow=2*nrow(A), ncol=2*ncol(A))
+  
+  # First Block expm for A integral, and expm(A*deltaT)
+  BLOCK[1:(2*nrow(A)), 1:ncol(A)] &lt;- 0
+  BLOCK[1:nrow(A), (nrow(A)+1):(2*nrow(A))] &lt;- I
+  BLOCK[(nrow(A)+1):(2*nrow(A)), (nrow(A)+1):(2*nrow(A))] &lt;- A
+  BLOCK &lt;- OpenMx::expm(BLOCK*deltaT)
+  expA &lt;- BLOCK[(nrow(A)+1):(2*nrow(A)), (nrow(A)+1):(2*nrow(A))]
+  intA &lt;- BLOCK[1:nrow(A), (nrow(A)+1):(2*nrow(A))]
+  
+  # Second Block expm for discretized Q
+  BLOCK[1:(nrow(A)), 1:ncol(A)] &lt;- -t(A)
+  BLOCK[(nrow(A)+1):(2*nrow(A)), 1:ncol(A)] &lt;- 0
+  BLOCK[1:nrow(A), (nrow(A)+1):(2*nrow(A))] &lt;- Q
+  BLOCK[(nrow(A)+1):(2*nrow(A)), (nrow(A)+1):(2*nrow(A))] &lt;- A
+  BLOCK &lt;- OpenMx::expm(BLOCK*deltaT)
+  
+  Bd &lt;- intA %*% B
+  Qd &lt;- t(expA) %*% BLOCK[1:nrow(A), (nrow(A)+1):(2*nrow(A))]
+  return(list(Ad=expA, Bd=Bd, Qd=Qd))
+}
+</code></pre></div><h4 id="c-rcpparmadillo">C++ (RcppArmadillo):</h4>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// [[Rcpp::depends(RcppArmadillo)]]
+</span><span class="c1"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;RcppArmadillo.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">Rcpp</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">arma</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// [[Rcpp::export]]
+</span><span class="c1"></span><span class="n">List</span> <span class="nf">discretize</span><span class="p">(</span><span class="n">mat</span> <span class="n">A</span><span class="p">,</span> <span class="n">mat</span> <span class="n">B</span><span class="p">,</span> <span class="n">mat</span> <span class="n">Q</span><span class="p">,</span> <span class="kt">double</span> <span class="n">dt</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">mat</span> <span class="n">M</span><span class="p">,</span> <span class="n">expA</span><span class="p">,</span> <span class="n">intA</span><span class="p">,</span> <span class="n">Ad</span><span class="p">,</span> <span class="n">Bd</span><span class="p">,</span> <span class="n">Qd</span><span class="p">,</span> <span class="n">I</span><span class="p">;</span>
+	<span class="n">List</span> <span class="n">output</span><span class="p">;</span>
+	<span class="n">I</span><span class="p">.</span><span class="n">eye</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">);</span>
+	<span class="n">M</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">);</span>
+	
+	<span class="c1">// First Block expm for A integral, and expm(A*deltaT)
+</span><span class="c1"></span>	<span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">I</span><span class="p">;</span>
+	<span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">;</span>
+	<span class="n">M</span><span class="o">=</span><span class="n">expmat</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="n">dt</span><span class="p">);</span>
+	
+	<span class="n">intA</span> <span class="o">=</span> <span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+	<span class="n">expA</span> <span class="o">=</span> <span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+	
+	<span class="c1">// Second Block expm for discretized Q
+</span><span class="c1"></span>	<span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">t</span><span class="p">();</span>
+	<span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">);</span>
+	<span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">Q</span><span class="p">;</span>
+	<span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="p">;</span>
+	<span class="n">M</span><span class="o">=</span><span class="n">expmat</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="n">dt</span><span class="p">);</span>
+	
+	<span class="n">output</span><span class="p">(</span><span class="s">&#34;Ad&#34;</span><span class="p">)</span><span class="o">=</span><span class="n">expA</span><span class="p">;</span>
+	<span class="n">output</span><span class="p">(</span><span class="s">&#34;Bd&#34;</span><span class="p">)</span><span class="o">=</span><span class="n">intA</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+	<span class="n">output</span><span class="p">(</span><span class="s">&#34;Qd&#34;</span><span class="p">)</span><span class="o">=</span><span class="n">expA</span><span class="p">.</span><span class="n">t</span><span class="p">()</span> <span class="o">*</span> <span class="n">M</span><span class="p">.</span><span class="n">submat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="stan">Stan:</h4>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">functions{
+	matrix[] discretize(matrix A, matrix B, matrix Q, real dt) {
+		int m = rows(A);
+		int n = m;
+		matrix[m,n] expA;
+		matrix[m,n] intA; 
+		matrix[m,n] I = diag_matrix(rep_vector(1.0, m));
+		matrix[m,n] output[3];
+		
+		// First Block expm for A integral, and expm(A*deltaT)
+		matrix[2*m,2*n] M = append_col(rep_matrix(0, 2*m, n), append_row(I, A));
+		M = matrix_exp(M*dt);
+		
+		intA = block(M, 1,  n+1, m, n);
+		expA = block(M, m+1,  n+1, m, n);
+		
+		// Second Block expm for discretized Q
+		M = append_col( append_row(-1*A&#39;, rep_matrix(0, m, n)), append_row(Q, A));
+		M = matrix_exp(M*dt);
+				
+		output[1] = expA;
+		output[2] = intA*B;
+		output[3] = expA&#39; * block(M, 1,  n+1, m, n);
+
+		return output;
+	}	
+}
+</code></pre></div>
+    </div>
+
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://kmckee90.github.io/post/edu1/">
