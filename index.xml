@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Sat, 20 Mar 2021 21:47:13 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 22:42:13 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stochastic resonance</title>
+      <link>https://kmckee90.github.io/post/stochres/</link>
+      <pubDate>Sat, 20 Mar 2021 22:42:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/stochres/</guid>
+      <description>In digging through old models and scripts, I came upon one to illustrate the concept of stochastic resonance. In short, when noise is added to periodic signals with local stability, it can cause them to jump between equilibria at about the dominant frequency:
+We are always looking for interesting statistical phenomena like this for models in computational psychiatry, where symptoms of mania or depression, for example, are often episodic and make large, spontaneous leaps after periods of relative stability.</description>
+    </item>
+    
     <item>
       <title>Discretization in 3 languages</title>
       <link>https://kmckee90.github.io/post/discretization/</link>
@@ -130,7 +140,7 @@ Interests Psychology My undergraduate degree is in Psychology but I have not car
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/page/code/</guid>
-      <description>Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  Misc.  Discretization in 3 languages  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy.</description>
+      <description>Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  Misc.  Discretization in 3 languages Stochastic Resonance  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy.</description>
     </item>
     
     <item>
@@ -180,8 +190,7 @@ McKee, K. L., Russell, M., Mennis, J., Mason, M., &amp;amp; Neale, M. C. (2019).
 Department of Statistics
 Center for Biostatistics and Health Data Science
 Virginia Tech
-Applied Statistics My current role in research is as a statistical analyst, helping investigators with everything from the conception of new hypotheses to writing grants, running analyses, and publishing manuscripts.
-Theoretical Methods My methodological research merges ideas from biometrical genetic theory with state-space modeling. In short, I am interested in how estimated genetic signals such as heritability can be used to validate theoretical models of cognition and behavior.</description>
+Research Goals Long-term, I would like to contribute to research on how the brain undertakes metacognition and self-reflection. Research on mindfulness, cognitive behavioral therapy, and other self-reflective states of consciousness has shown that metacognition has a large influence on mental health and learning. It should be possible to simulate metacognition and self-reflection from first-principles in artificial neural networks and doing so would allow us to better understand both the higher cognitive capabilities of humans as well as mental illnesses.</description>
     </item>
     
   </channel>

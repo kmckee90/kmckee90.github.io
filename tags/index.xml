@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Fri, 19 Mar 2021 10:11:35 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 22:42:13 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dynamical systems</title>
+      <link>https://kmckee90.github.io/tags/dynamical-systems/</link>
+      <pubDate>Sat, 20 Mar 2021 22:42:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/dynamical-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43;</title>
+      <link>https://kmckee90.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Sat, 20 Mar 2021 21:47:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://kmckee90.github.io/tags/r/</link>
+      <pubDate>Sat, 20 Mar 2021 21:47:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rcpp</title>
+      <link>https://kmckee90.github.io/tags/rcpp/</link>
+      <pubDate>Sat, 20 Mar 2021 21:47:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/rcpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stan</title>
+      <link>https://kmckee90.github.io/tags/stan/</link>
+      <pubDate>Sat, 20 Mar 2021 21:47:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/tags/stan/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>educational</title>
       <link>https://kmckee90.github.io/tags/educational/</link>
@@ -23,15 +68,6 @@
       <pubDate>Fri, 19 Mar 2021 10:11:35 -0400</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/tags/mcmc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stan</title>
-      <link>https://kmckee90.github.io/tags/stan/</link>
-      <pubDate>Fri, 19 Mar 2021 10:11:35 -0400</pubDate>
-      <author>kmckee90@gmail.com (Kevin McKee)</author>
-      <guid>https://kmckee90.github.io/tags/stan/</guid>
       <description></description>
     </item>
     

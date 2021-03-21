@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dynamical systems on Kevin McKee</title>
+    <link>https://kmckee90.github.io/tags/dynamical-systems/</link>
+    <description>Recent content in dynamical systems on Kevin McKee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
+    <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
+    <lastBuildDate>Sat, 20 Mar 2021 22:42:13 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/dynamical-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stochastic resonance</title>
+      <link>https://kmckee90.github.io/post/stochres/</link>
+      <pubDate>Sat, 20 Mar 2021 22:42:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/stochres/</guid>
+      <description>In digging through old models and scripts, I came upon one to illustrate the concept of stochastic resonance. In short, when noise is added to periodic signals with local stability, it can cause them to jump between equilibria at about the dominant frequency:
+We are always looking for interesting statistical phenomena like this for models in computational psychiatry, where symptoms of mania or depression, for example, are often episodic and make large, spontaneous leaps after periods of relative stability.</description>
+    </item>
+    
+  </channel>
+</rss>

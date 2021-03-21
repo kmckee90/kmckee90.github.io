@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Kevin McKee</title>
+    <link>https://kmckee90.github.io/tags/r/</link>
+    <description>Recent content in R on Kevin McKee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
+    <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
+    <lastBuildDate>Sat, 20 Mar 2021 21:47:13 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Discretization in 3 languages</title>
+      <link>https://kmckee90.github.io/post/discretization/</link>
+      <pubDate>Sat, 20 Mar 2021 21:47:13 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/discretization/</guid>
+      <description>There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices A, the drift or state transition matrix, B, the input or covariate coefficient matrix, and Q, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -227,6 +227,71 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://kmckee90.github.io/post/stochres/">
+        <h2 class="post-title">Stochastic resonance</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 20, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        <p>In digging through old models and scripts, I came upon one to illustrate the concept of <a href="https://en.wikipedia.org/wiki/Stochastic_resonance#:~:text=Stochastic%20resonance%20(SR)%20is%20a,a%20wide%20spectrum%20of%20frequencies">stochastic resonance</a>.
+In short, when noise is added to periodic signals with local stability, it can cause them to jump between equilibria at about the dominant frequency:</p>
+<img src="sr.gif">
+<p>We are always looking for interesting statistical phenomena like this for models in computational psychiatry, where symptoms of mania or depression, for example, are often episodic and make large, spontaneous leaps after periods of relative stability.</p>
+<p>The above example was produced by the following nonlinear equation with a sinusoidal force and noise term:</p>
+<p>$$ \frac{dy(t)}{dt} = y(t)-y(t)^3 + .3\sin (.1225t) + \delta(t),\quad \delta(t) \sim N(0,1)$$</p>
+<p>R code to generate the above animation:</p>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">library(deSolve)
+
+dwp&lt;-function(t,  y, parms){
+  with(parms, {
+    dy&lt;- y - y^3  + .3*sin(.35^2 * t ) + rnorm(1, 0, sigma)
+    return(list(&#34;dy&#34;=dy))
+  })
+}
+
+Time&lt;-500
+dt&lt;-.1
+sigs&lt;-seq(0, 5, length.out=50)
+for(i in 1:length(sigs) ){
+  set.seed(123)
+  sig&lt;-sigs[i]
+  x&lt;-rk4(y=-1,t=seq(dt, Time, by=dt), dwp, parms=list(&#34;dt&#34;=dt, &#34;Time&#34;=Time, &#34;sigma&#34;=sig))
+  png(paste0(&#34;stochres/&#34;,i,&#34;.png&#34;), width=1024, height=780, pointsize = 24)
+  plot(x, type=&#34;l&#34;, ylim=c(-2,2), main=&#34;&#34;, xlab=&#34;Time&#34;, ylab=&#34;State&#34;)
+  dev.off()
+}
+</code></pre></div>
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://kmckee90.github.io/tags/dynamical-systems/">dynamical systems</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://kmckee90.github.io/post/discretization/">
         <h2 class="post-title">Discretization in 3 languages</h2>
         
@@ -346,6 +411,18 @@
     </div>
 
     
+    <div class="blog-tags">
+        
+        <a href="https://kmckee90.github.io/tags/r/">R</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/stan/">stan</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/rcpp/">rcpp</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/c&#43;&#43;/">c&#43;&#43;</a>&nbsp;
+        
+    </div>
+    
 
 </article>
           
@@ -439,7 +516,7 @@ We are essentially talking about structural equation modeling with discrete dist
 <p>And a bonus idea: when there are a large number of indicators and we are assuming that they function similarly in representing the factor, we can model the distribution of the factor loadings and perhaps gain a little extra power to estimate them.
 The discrimination parameters in IRT tend to be the least precise.</p>
 <p>So here is a model that addresses all of that, first with simulation of the data:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">D&lt;-4 #Number of factors
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">D&lt;-4 #Number of factors
 Q&lt;-50 #Indicators per factor
 K&lt;-7 #Levels per indicator
 N&lt;-600 #Sample size
@@ -567,7 +644,7 @@ x1&lt;-rnorm(n, mean=.8*f, sd=.5)
 x2&lt;-rbinom(n, size=1, p=1/(1+exp(-2*f-.5))) 
 x3&lt;-rpois(n, lambda=exp(-1 + 1.5*f)) 
 </code></pre></div><p>Here is the Stan code for a simplistic model with 3 indicators distributed as normal, Bernoulli, and Poisson:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">data { 
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">data { 
   int&lt;lower=0&gt; N;
   vector[N] x1;
   int x2[N];
