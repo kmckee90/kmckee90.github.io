@@ -59,7 +59,7 @@
   "headline": "Discretization in 3 languages",
   "description" : "There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices A, the drift or state transition matrix, B, the input or covariate coefficient matrix, and Q, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step.",
   "inLanguage" : "en",
-  "wordCount":  446 ,
+  "wordCount":  462 ,
   "datePublished" : "2021-03-20T21:47:13",
   "dateModified" : "2021-03-20T21:47:13",
   "image" : "https:\/\/kmckee90.github.io",
@@ -275,7 +275,8 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices <code>A</code>, the drift or state transition matrix, <code>B</code>, the input or covariate coefficient matrix, and <code>Q</code>, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step. The discretized matrices function like those of an autoregressive process. Some details of this approach and what this does can be found <a href="https://en.wikipedia.org/wiki/Discretization">here</a> but not exactly a complete implementation, namely with matrix <code>B</code>. So this is one of those code blocks I just have backed up in several project folders in various languages.</p>
+        <p>There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices <code>A</code>, the drift or state transition matrix, <code>B</code>, the input or covariate coefficient matrix, and <code>Q</code>, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step. The discretized matrices function like those of an autoregressive process. Some details of this approach and what this does can be found <a href="https://en.wikipedia.org/wiki/Discretization">here</a> but not exactly a complete implementation, namely with matrix <code>B</code>. So this is one of those code blocks I just have backed up in several project folders in various languages.
+Thanks to <a href="https://psychology.gatech.edu/michael-hunter">Mike Hunter</a> of Georgia Tech for originally creating this and providing it in OpenMx.</p>
 <h4 id="r">R:</h4>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">discretize &lt;- function(A, B, Q, deltaT){
   deltaT &lt;- c(deltaT)

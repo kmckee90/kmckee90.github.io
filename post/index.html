@@ -253,7 +253,7 @@
     <div class="post-entry">
         <p>In digging through old models and scripts, I came upon one to illustrate the concept of <a href="https://en.wikipedia.org/wiki/Stochastic_resonance#:~:text=Stochastic%20resonance%20(SR)%20is%20a,a%20wide%20spectrum%20of%20frequencies">stochastic resonance</a>.
 In short, when noise is added to periodic signals with local stability, it can cause them to jump between equilibria at about the dominant frequency:</p>
-<img src="sr.gif">
+<img src="/sr.gif">
 <p>We are always looking for interesting statistical phenomena like this for models in computational psychiatry, where symptoms of mania or depression, for example, are often episodic and make large, spontaneous leaps after periods of relative stability.</p>
 <p>The above example was produced by the following nonlinear equation with a sinusoidal force and noise term:</p>
 <p>$$ \frac{dy(t)}{dt} = y(t)-y(t)^3 + .3\sin (.1225t) + \delta(t),\quad \delta(t) \sim N(0,1)$$</p>
@@ -316,7 +316,8 @@ for(i in 1:length(sigs) ){
 
     </p>
     <div class="post-entry">
-        <p>There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices <code>A</code>, the drift or state transition matrix, <code>B</code>, the input or covariate coefficient matrix, and <code>Q</code>, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step. The discretized matrices function like those of an autoregressive process. Some details of this approach and what this does can be found <a href="https://en.wikipedia.org/wiki/Discretization">here</a> but not exactly a complete implementation, namely with matrix <code>B</code>. So this is one of those code blocks I just have backed up in several project folders in various languages.</p>
+        <p>There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices <code>A</code>, the drift or state transition matrix, <code>B</code>, the input or covariate coefficient matrix, and <code>Q</code>, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step. The discretized matrices function like those of an autoregressive process. Some details of this approach and what this does can be found <a href="https://en.wikipedia.org/wiki/Discretization">here</a> but not exactly a complete implementation, namely with matrix <code>B</code>. So this is one of those code blocks I just have backed up in several project folders in various languages.
+Thanks to <a href="https://psychology.gatech.edu/michael-hunter">Mike Hunter</a> of Georgia Tech for originally creating this and providing it in OpenMx.</p>
 <h4 id="r">R:</h4>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">discretize &lt;- function(A, B, Q, deltaT){
   deltaT &lt;- c(deltaT)
