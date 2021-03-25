@@ -214,6 +214,218 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://kmckee90.github.io/post/recurrenthelmholtz/">
+        <h2 class="post-title">Binary neural nets in R, part 3: Recurrent Helmholtz Machine</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 25, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        <p><a href="https://github.com/kmckee90/Neural_Nets_in_R/blob/main/RecurrentHelmholz.R">github repository for this project</a></p>
+<p>Part 3 of my neural network project in R involves coding a recurrent version of the <a href="/post/hm1/">Helmholtz machine</a>.
+A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, <a href="https://www.cs.utoronto.ca/~hinton/absps/hmtt.pdf">Hinton already published the idea in 1995</a>.
+I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.</p>
+<p>This graphic should help understand the difference in model structure, with the top two indicating the recognition (left) and generation (right) networks of a basic Helmholtz machine, simplified to one node per layer:</p>
+<img src="/rhhs.jpg" width=65%>
+<p>The center layer adds the recurrent element by storing the last set of hidden node values as fixed.
+Notice that not only are they fixed, but they are not generated in the sleep phase of learning.
+Because of this, we can also go on to specify the model in the third row, where all current layers draw from all stored lags.
+The effect is something akin to both lateral connectivity within-layer and connections that can skip layers.</p>
+<p>One unexplored thought is that of unfixed lag values in the generative stage.
+What does it mean if the model can dream retroactively?
+Would it help with learning?
+It is true of human memory that nothing is fixed.
+Every new recollection of a memory alters it slightly and some memories can be altogether fabricated.
+In dreams, it&rsquo;s more common than not for me to experience false memories, or a sense of continuity from before moment of experience.
+I suspect the most sensible configuration would be to fix the memory of the data but allow past values of hidden nodes at higher layers to be re-evaluated with the addition of new information.</p>
+<p>For now, I&rsquo;ll keep it as simple as possible and let all lagged values remain fixed.
+To get started, I changed the list <code>L</code> to have another level of depth, allowing time lags, as hinted by the additional subscript on the variable names <code>_l0</code>&hellip;<code>_l3</code>:
+For 2 hidden layers of dimension 8 and 4, each with 3 lags, we get:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">[[1]]</span>
+<span class="n">[1]</span> <span class="s">&#34;bias&#34;</span>
+
+<span class="n">[[2]]</span>
+<span class="n">[[2]][[1]]</span>
+ <span class="n">[1]</span> <span class="s">&#34;x1_l0&#34;</span>  <span class="s">&#34;x2_l0&#34;</span>  <span class="s">&#34;x3_l0&#34;</span>  <span class="s">&#34;x4_l0&#34;</span>  <span class="s">&#34;x5_l0&#34;</span>  <span class="s">&#34;x6_l0&#34;</span>  <span class="s">&#34;x7_l0&#34;</span>  <span class="s">&#34;x8_l0&#34;</span>  <span class="s">&#34;x9_l0&#34;</span>  <span class="s">&#34;x10_l0&#34;</span> <span class="s">&#34;x11_l0&#34;</span> <span class="s">&#34;x12_l0&#34;</span>
+
+<span class="n">[[2]][[2]]</span>
+ <span class="n">[1]</span> <span class="s">&#34;x1_l1&#34;</span>  <span class="s">&#34;x2_l1&#34;</span>  <span class="s">&#34;x3_l1&#34;</span>  <span class="s">&#34;x4_l1&#34;</span>  <span class="s">&#34;x5_l1&#34;</span>  <span class="s">&#34;x6_l1&#34;</span>  <span class="s">&#34;x7_l1&#34;</span>  <span class="s">&#34;x8_l1&#34;</span>  <span class="s">&#34;x9_l1&#34;</span>  <span class="s">&#34;x10_l1&#34;</span> <span class="s">&#34;x11_l1&#34;</span> <span class="s">&#34;x12_l1&#34;</span>
+
+<span class="n">[[2]][[3]]</span>
+ <span class="n">[1]</span> <span class="s">&#34;x1_l2&#34;</span>  <span class="s">&#34;x2_l2&#34;</span>  <span class="s">&#34;x3_l2&#34;</span>  <span class="s">&#34;x4_l2&#34;</span>  <span class="s">&#34;x5_l2&#34;</span>  <span class="s">&#34;x6_l2&#34;</span>  <span class="s">&#34;x7_l2&#34;</span>  <span class="s">&#34;x8_l2&#34;</span>  <span class="s">&#34;x9_l2&#34;</span>  <span class="s">&#34;x10_l2&#34;</span> <span class="s">&#34;x11_l2&#34;</span> <span class="s">&#34;x12_l2&#34;</span>
+
+<span class="n">[[2]][[4]]</span>
+ <span class="n">[1]</span> <span class="s">&#34;x1_l3&#34;</span>  <span class="s">&#34;x2_l3&#34;</span>  <span class="s">&#34;x3_l3&#34;</span>  <span class="s">&#34;x4_l3&#34;</span>  <span class="s">&#34;x5_l3&#34;</span>  <span class="s">&#34;x6_l3&#34;</span>  <span class="s">&#34;x7_l3&#34;</span>  <span class="s">&#34;x8_l3&#34;</span>  <span class="s">&#34;x9_l3&#34;</span>  <span class="s">&#34;x10_l3&#34;</span> <span class="s">&#34;x11_l3&#34;</span> <span class="s">&#34;x12_l3&#34;</span>
+
+
+<span class="n">[[3]]</span>
+<span class="n">[[3]][[1]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h1_n1_l0&#34;</span> <span class="s">&#34;h1_n2_l0&#34;</span> <span class="s">&#34;h1_n3_l0&#34;</span> <span class="s">&#34;h1_n4_l0&#34;</span> <span class="s">&#34;h1_n5_l0&#34;</span> <span class="s">&#34;h1_n6_l0&#34;</span> <span class="s">&#34;h1_n7_l0&#34;</span> <span class="s">&#34;h1_n8_l0&#34;</span>
+
+<span class="n">[[3]][[2]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h1_n1_l1&#34;</span> <span class="s">&#34;h1_n2_l1&#34;</span> <span class="s">&#34;h1_n3_l1&#34;</span> <span class="s">&#34;h1_n4_l1&#34;</span> <span class="s">&#34;h1_n5_l1&#34;</span> <span class="s">&#34;h1_n6_l1&#34;</span> <span class="s">&#34;h1_n7_l1&#34;</span> <span class="s">&#34;h1_n8_l1&#34;</span>
+
+<span class="n">[[3]][[3]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h1_n1_l2&#34;</span> <span class="s">&#34;h1_n2_l2&#34;</span> <span class="s">&#34;h1_n3_l2&#34;</span> <span class="s">&#34;h1_n4_l2&#34;</span> <span class="s">&#34;h1_n5_l2&#34;</span> <span class="s">&#34;h1_n6_l2&#34;</span> <span class="s">&#34;h1_n7_l2&#34;</span> <span class="s">&#34;h1_n8_l2&#34;</span>
+
+<span class="n">[[3]][[4]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h1_n1_l3&#34;</span> <span class="s">&#34;h1_n2_l3&#34;</span> <span class="s">&#34;h1_n3_l3&#34;</span> <span class="s">&#34;h1_n4_l3&#34;</span> <span class="s">&#34;h1_n5_l3&#34;</span> <span class="s">&#34;h1_n6_l3&#34;</span> <span class="s">&#34;h1_n7_l3&#34;</span> <span class="s">&#34;h1_n8_l3&#34;</span>
+
+
+<span class="n">[[4]]</span>
+<span class="n">[[4]][[1]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h2_n1_l0&#34;</span> <span class="s">&#34;h2_n2_l0&#34;</span> <span class="s">&#34;h2_n3_l0&#34;</span> <span class="s">&#34;h2_n4_l0&#34;</span>
+
+<span class="n">[[4]][[2]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h2_n1_l1&#34;</span> <span class="s">&#34;h2_n2_l1&#34;</span> <span class="s">&#34;h2_n3_l1&#34;</span> <span class="s">&#34;h2_n4_l1&#34;</span>
+
+<span class="n">[[4]][[3]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h2_n1_l2&#34;</span> <span class="s">&#34;h2_n2_l2&#34;</span> <span class="s">&#34;h2_n3_l2&#34;</span> <span class="s">&#34;h2_n4_l2&#34;</span>
+
+<span class="n">[[4]][[4]]</span>
+<span class="n">[1]</span> <span class="s">&#34;h2_n1_l3&#34;</span> <span class="s">&#34;h2_n2_l3&#34;</span> <span class="s">&#34;h2_n3_l3&#34;</span> <span class="s">&#34;h2_n4_l3&#34;</span>
+</code></pre></div><p>The generative and recognition adjacency weight matrices <code>Wg</code> and <code>Wr</code> now include columns and rows for all of the above labels, so the dimensionality grows quite quickly.
+This is where R&rsquo;s slowness makes it difficult to really evaluate this model.
+My work is ahead of me to implement it in Python.</p>
+<p>Anyways, the wake-sleep cycle is mostly the same.
+The bottom-up and top-down expectations have many more terms from the lagged values, but my single-matrix approach easily generalizes to allow for that.
+There is however extra code appending the matrix of complete node values to store those generated at each iteration in the previous row:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r">    <span class="nf">if</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="m">1</span><span class="p">)</span> <span class="nf">for</span><span class="p">(</span><span class="n">l</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">min</span><span class="p">(</span><span class="n">t</span><span class="m">-1</span><span class="p">,</span><span class="n">lags</span><span class="p">)</span> <span class="p">)</span> <span class="n">X[t</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="n">l</span><span class="m">+1</span><span class="p">))</span><span class="n">]</span><span class="o">&lt;-</span><span class="n">X[t</span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="n">]</span>
+</code></pre></div><p>This is added to the beginning of each loop that calculates the layer expectations.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#Start values</span>
+<span class="n">Wg[Wg.f]</span><span class="o">&lt;-</span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">Wg.f</span><span class="p">))</span>
+<span class="n">Wr[Wr.f]</span><span class="o">&lt;-</span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">Wr.f</span><span class="p">))</span>
+
+
+<span class="n">Wr[Wr</span><span class="o">==</span><span class="m">1</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">0</span>
+<span class="n">Wg[Wg</span><span class="o">==</span><span class="m">1</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">0</span>
+
+<span class="n">nIter</span><span class="o">&lt;-</span> <span class="m">500000</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">nIter</span><span class="p">){</span>
+  <span class="c1"># X.gen&lt;-rRHH(n+1, sim.Wg)[-1,]</span>
+  <span class="c1"># dat&lt;-X.gen[,unlist(L[[2]][[1]])]</span>
+  <span class="n">dat.chunk.seg</span><span class="o">&lt;-</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">dat.bit</span><span class="p">)</span><span class="o">-</span><span class="n">chunkSize</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="m">1</span> <span class="p">)</span>
+  <span class="n">dat.chunk</span><span class="o">&lt;-</span><span class="n">dat.bit[dat.chunk.seg</span><span class="o">:</span><span class="p">(</span><span class="n">dat.chunk.seg</span><span class="o">+</span><span class="n">chunkSize</span><span class="m">-1</span><span class="p">),</span><span class="n">]</span>
+  
+  <span class="n">n</span><span class="o">&lt;-</span><span class="n">chunkSize</span>
+  
+  <span class="n">X</span><span class="o">&lt;-</span><span class="nf">matrix</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">dim.total</span><span class="p">,</span> <span class="n">dimnames</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">dim.v</span><span class="p">))</span>
+  <span class="n">X[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">1</span>
+  <span class="n">X[</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="n">L[[2]][[1]]</span><span class="p">)</span> <span class="n">]</span><span class="o">&lt;-</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">dat.chunk</span><span class="p">)</span>
+  
+  
+<span class="c1">#WAKE</span>
+  <span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="m">1</span><span class="p">)</span> <span class="nf">for</span><span class="p">(</span><span class="n">l</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">min</span><span class="p">(</span><span class="n">t</span><span class="m">-1</span><span class="p">,</span><span class="n">lags</span><span class="p">)</span> <span class="p">)</span> <span class="n">X[t</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="n">l</span><span class="m">+1</span><span class="p">))</span><span class="n">]</span><span class="o">&lt;-</span><span class="n">X[t</span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="n">]</span>
+    <span class="n">x</span><span class="o">&lt;-</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">X[t</span><span class="p">,</span><span class="n">]</span><span class="p">)</span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">h</span> <span class="n">in</span> <span class="m">3</span><span class="o">:</span><span class="n">Q</span><span class="p">){</span>
+      <span class="n">x[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span><span class="o">&lt;-</span><span class="nf">lgt</span><span class="p">(</span><span class="n">Wr</span><span class="o">%*%</span><span class="n">x</span><span class="p">)</span><span class="n">[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span>
+      <span class="n">x[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span><span class="o">&lt;-</span><span class="nf">rbinom</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">x[L[[h]][[1]]]</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="n">x[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span> <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">X[t</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="n">]</span><span class="o">&lt;-</span><span class="nf">t</span><span class="p">(</span><span class="n">x</span><span class="nf">[unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">)),</span><span class="n">]</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+   <span class="n">X.p</span><span class="o">&lt;-</span><span class="nf">lgt</span><span class="p">(</span><span class="n">X</span><span class="o">%*%</span><span class="nf">t</span><span class="p">(</span><span class="n">Wg</span><span class="p">))</span>
+   <span class="n">X.p[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">1</span>
+   <span class="n">Wg.gr</span><span class="o">&lt;-</span><span class="nf">t</span><span class="p">((</span><span class="nf">t</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">X.p</span><span class="p">))</span><span class="o">/</span><span class="nf">nrow</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+   <span class="n">Wg[Wg.f]</span><span class="o">&lt;-</span> <span class="p">(</span><span class="n">Wg</span> <span class="o">+</span> <span class="n">lr</span><span class="o">*</span><span class="n">Wg.gr</span><span class="p">)</span><span class="n">[Wg.f]</span>
+  
+    
+<span class="c1">#SLEEP</span>
+   <span class="n">X</span><span class="o">&lt;-</span><span class="nf">matrix</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">dim.total</span><span class="p">,</span> <span class="n">dimnames</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">dim.v</span><span class="p">))</span>
+   <span class="n">X[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">1</span>
+   <span class="nf">for</span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">){</span>
+     <span class="nf">if</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="m">1</span><span class="p">)</span> <span class="nf">for</span><span class="p">(</span><span class="n">l</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">min</span><span class="p">(</span><span class="n">t</span><span class="m">-1</span><span class="p">,</span><span class="n">lags</span><span class="p">)</span> <span class="p">)</span> <span class="n">X[t</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="n">l</span><span class="m">+1</span><span class="p">))</span><span class="n">]</span><span class="o">&lt;-</span><span class="n">X[t</span><span class="o">-</span><span class="n">l</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="n">]</span>
+     <span class="n">x</span><span class="o">&lt;-</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">X[t</span><span class="p">,</span><span class="n">]</span><span class="p">)</span>
+     <span class="nf">for</span><span class="p">(</span><span class="n">h</span> <span class="n">in</span> <span class="n">Q</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
+       <span class="n">x[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span><span class="o">&lt;-</span><span class="nf">lgt</span><span class="p">(</span><span class="n">Wg</span><span class="o">%*%</span><span class="n">x</span><span class="p">)</span><span class="n">[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span>
+       <span class="n">x[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span><span class="o">&lt;-</span><span class="nf">rbinom</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">x[L[[h]][[1]]]</span><span class="p">),</span> <span class="m">1</span><span class="p">,</span> <span class="n">x[L[[h]][[1]]</span><span class="p">,</span><span class="n">]</span> <span class="p">)</span>
+     <span class="p">}</span>
+     <span class="n">X[t</span><span class="p">,</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="n">]</span><span class="o">&lt;-</span><span class="nf">t</span><span class="p">(</span><span class="n">x</span><span class="nf">[unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="m">1</span><span class="p">)),</span><span class="n">]</span><span class="p">)</span>
+     
+   <span class="p">}</span>
+  
+    
+   <span class="n">X.p</span><span class="o">&lt;-</span><span class="nf">lgt</span><span class="p">(</span><span class="n">X</span><span class="o">%*%</span><span class="nf">t</span><span class="p">(</span><span class="n">Wr</span><span class="p">))</span>
+   <span class="n">X.p[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="o">&lt;-</span><span class="m">1</span>
+   <span class="n">Wr.gr</span><span class="o">&lt;-</span><span class="nf">t</span><span class="p">((</span><span class="nf">t</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">X.p</span><span class="p">))</span><span class="o">/</span><span class="nf">nrow</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+   <span class="n">Wr[Wr.f]</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">Wr</span> <span class="o">+</span> <span class="n">lr</span><span class="o">*</span><span class="n">Wr.gr</span><span class="p">)</span><span class="n">[Wr.f]</span>
+   
+   <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="o">%%</span><span class="m">5</span><span class="o">==</span><span class="m">0</span><span class="p">)</span> <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\r&#34;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s">&#34;\t\t&#34;</span><span class="p">)</span>
+   
+   <span class="c1">#Output </span>
+   <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="o">%%</span><span class="m">150</span><span class="o">==</span><span class="m">0</span><span class="p">){</span>
+     <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\nData:\t&#34;</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="nf">printData</span><span class="p">(</span><span class="n">dat.chunk</span><span class="p">))</span>
+     <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\nSleep output:\t&#34;</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="nf">printData</span><span class="p">(</span><span class="n">X[</span><span class="p">,</span><span class="n">L[[2]][[1]]]</span><span class="p">))</span>
+     <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\nSimulation:\t&#34;</span><span class="p">)</span>
+     <span class="nf">print</span><span class="p">(</span><span class="nf">printData</span><span class="p">(</span><span class="nf">rRHH</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="n">Wg</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="n">L[[2]][[1]]]</span><span class="p">))</span>
+     <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\n\n&#34;</span><span class="p">)</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">I</span> <span class="n">am</span> <span class="n">training</span> <span class="n">this</span> <span class="n">model</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Wikipedia</span> <span class="n">page</span> <span class="n">for</span> <span class="n">the</span> <span class="n">American</span> <span class="n">civil</span> <span class="n">war.</span>
+<span class="n">I</span> <span class="n">mapped</span> <span class="n">every</span> <span class="n">word</span> <span class="n">to</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">vector</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">can</span> <span class="n">just</span> <span class="n">learn</span> <span class="n">successions</span> <span class="n">of</span> <span class="n">them</span><span class="o">:</span>
+
+<span class="n">```r</span>
+<span class="n">dat</span><span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;textData.csv&#34;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
+<span class="n">p</span><span class="o">&lt;-</span><span class="nf">ceiling</span><span class="p">(</span><span class="nf">log2</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">dat</span><span class="p">))))</span>
+<span class="n">bitMap</span><span class="o">&lt;-</span><span class="nf">expand.grid</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span> <span class="nf">list</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">1</span><span class="p">),</span> <span class="n">p</span><span class="p">))</span><span class="n">[1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">dat</span><span class="p">)),</span><span class="n">]</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">bitMap</span><span class="p">)</span><span class="o">&lt;-</span><span class="nf">sort</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
+<span class="n">dat.bit</span><span class="o">&lt;-</span><span class="n">bitMap[dat</span><span class="p">,</span><span class="n">]</span>
+</code></pre></div><p>With <code>modelDims&lt;-c(30, 20, 10); lags&lt;-10</code>, results so far suggest that either this is not a very effective approach to modeling language, or that the complexity is much greater than I can compute in R.
+I sorted the text-to-binary key in alphabetical order, so you get a lot of alternation between alphabetically adjacent words with random error.
+Perhaps a non-stochastic network is more sensible.
+Early iterations also show convergence to various local equilibria, likely due to the direct autoregressive expectations, or perhaps cyclical indirect autoregressions to the same effect.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;counterargument thrust house durability hundred drowning each each duties duties duties duties duties human duties duties duties duties duties duties&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;argument tobacco echo excludes echo discretion grew 1860 foot flying flying flying forces forces flying flying flying forces forces forces&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;bridges bottom advancing converted converted advances compromise; advances concern compromise; compromise shut compromise; compromise; compromise; compromise; compromise; compromise; compromise; compromise;&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;pbs none tariff patriotism thanks more obligations patriotism patriotism owned owners patriotism patriotism patriotism patriotism patriotism peacemakers patriotism patriotism patriotism&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;292 280 45 mont operate morris motivation most 45 open 396 396 45 0.1 396 100th 117 50 45 462&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;pbs none tariff patriotism thanks more obligations patriotism patriotism owned owners patriotism patriotism patriotism patriotism patriotism peacemakers patriotism patriotism patriotism&#34;</span>
+</code></pre></div><p>I will update this with better results if I can obtain them with more training.</p>
+
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://kmckee90.github.io/tags/code/">code</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/rbm/">rbm</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/boltzmann/">boltzmann</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/helmholtz/">helmholtz</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/neural-network/">neural network</a>&nbsp;
+        
+        <a href="https://kmckee90.github.io/tags/recurrent/">recurrent</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://kmckee90.github.io/post/ordinalirt/">
         <h2 class="post-title">Stan: Structural Ordinal Item Response Theory with a Latent Interaction</h2>
         

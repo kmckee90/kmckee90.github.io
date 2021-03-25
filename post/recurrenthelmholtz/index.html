@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>boltzmann - Kevin McKee</title>
+  <title>Binary neural nets in R, part 3: Recurrent Helmholtz Machine - Kevin McKee</title>
+  <meta name="description" content="github repository for this project
+Part 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, Hinton already published the idea in 1995. I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.">
   <meta name="author" content="Kevin McKee"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,13 +30,65 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/kmckee90.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/kmckee90.github.io\/post\/recurrenthelmholtz\/",
+          "name": "Binary neural nets in r, part 3 recurrent helmholtz machine"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kevin McKee"
+  },
+  "headline": "Binary neural nets in R, part 3: Recurrent Helmholtz Machine",
+  "description" : "github repository for this project\nPart 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, Hinton already published the idea in 1995. I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.",
+  "inLanguage" : "en",
+  "wordCount":  986 ,
+  "datePublished" : "2021-03-25T09:38:21",
+  "dateModified" : "2021-03-25T09:38:21",
+  "image" : "https:\/\/kmckee90.github.io",
+  "keywords" : [ "code, rbm, boltzmann, helmholtz, neural network, recurrent" ],
+  "mainEntityOfPage" : "https:\/\/kmckee90.github.io\/post\/recurrenthelmholtz\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/kmckee90.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/kmckee90.github.io",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="boltzmann" />
-<meta property="og:url" content="https://kmckee90.github.io/tags/boltzmann/" />
+<meta property="og:title" content="Binary neural nets in R, part 3: Recurrent Helmholtz Machine" />
+<meta property="og:description" content="github repository for this project
+Part 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, Hinton already published the idea in 1995. I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.">
+<meta property="og:url" content="https://kmckee90.github.io/post/recurrenthelmholtz/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kevin McKee" />
 
-  <meta name="twitter:title" content="boltzmann" />
+  <meta name="twitter:title" content="Binary neural nets in R, part 3: Recurrent Helmholtz Machine" />
+  <meta name="twitter:description" content="github repository for this project
+Part 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of …">
   <meta name="twitter:card" content="summary" />
   <meta name="generator" content="Hugo 0.81.0" />
   <link rel="alternate" href="https://kmckee90.github.io/index.xml" type="application/rss+xml" title="Kevin McKee"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -189,40 +243,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>boltzmann</h1>
-              
-              
-                <hr class="small">
+                <h1>Binary neural nets in R, part 3: Recurrent Helmholtz Machine</h1>
               
               
               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-    <a href="https://kmckee90.github.io/post/recurrenthelmholtz/">
-        <h2 class="post-title">Binary neural nets in R, part 3: Recurrent Helmholtz Machine</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
+              
+                <span class="post-meta">
   
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on March 25, 2021
@@ -236,8 +264,20 @@
 </span>
 
 
-    </p>
-    <div class="post-entry">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         <p><a href="https://github.com/kmckee90/Neural_Nets_in_R/blob/main/RecurrentHelmholz.R">github repository for this project</a></p>
 <p>Part 3 of my neural network project in R involves coding a recurrent version of the <a href="/post/hm1/">Helmholtz machine</a>.
 A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, <a href="https://www.cs.utoronto.ca/~hinton/absps/hmtt.pdf">Hinton already published the idea in 1995</a>.
@@ -403,360 +443,105 @@ Early iterations also show convergence to various local equilibria, likely due t
 <span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;pbs none tariff patriotism thanks more obligations patriotism patriotism owned owners patriotism patriotism patriotism patriotism patriotism peacemakers patriotism patriotism patriotism&#34;</span>
 </code></pre></div><p>I will update this with better results if I can obtain them with more training.</p>
 
-    </div>
 
-    
-    <div class="blog-tags">
         
-        <a href="https://kmckee90.github.io/tags/code/">code</a>&nbsp;
+          <div class="blog-tags">
+            
+              <a href="https://kmckee90.github.io/tags/code/">code</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/rbm/">rbm</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/boltzmann/">boltzmann</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/helmholtz/">helmholtz</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/neural-network/">neural network</a>&nbsp;
+            
+              <a href="https://kmckee90.github.io/tags/recurrent/">recurrent</a>&nbsp;
+            
+          </div>
         
-        <a href="https://kmckee90.github.io/tags/rbm/">rbm</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/boltzmann/">boltzmann</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/helmholtz/">helmholtz</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/neural-network/">neural network</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/recurrent/">recurrent</a>&nbsp;
-        
-    </div>
-    
 
-</article>
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frecurrenthelmholtz%2f&amp;text=Binary%20neural%20nets%20in%20R%2c%20part%203%3a%20Recurrent%20Helmholtz%20Machine&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkmckee90.github.io%2fpost%2frecurrenthelmholtz%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frecurrenthelmholtz%2f&amp;title=Binary%20neural%20nets%20in%20R%2c%20part%203%3a%20Recurrent%20Helmholtz%20Machine" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frecurrenthelmholtz%2f&amp;title=Binary%20neural%20nets%20in%20R%2c%20part%203%3a%20Recurrent%20Helmholtz%20Machine" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frecurrenthelmholtz%2f&amp;title=Binary%20neural%20nets%20in%20R%2c%20part%203%3a%20Recurrent%20Helmholtz%20Machine" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkmckee90.github.io%2fpost%2frecurrenthelmholtz%2f&amp;description=Binary%20neural%20nets%20in%20R%2c%20part%203%3a%20Recurrent%20Helmholtz%20Machine" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
           
-            <article class="post-preview">
-    <a href="https://kmckee90.github.io/post/hm1/">
-        <h2 class="post-title">Binary neural nets in R, part 2: Helmholtz Machine</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 18, 2021
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        <p><a href="https://github.com/kmckee90/Neural_Nets_in_R/blob/main/Helmholtz.R">github source for this project</a></p>
-<p>In the last post, I looked at coding a <a href="/post/rbm1/">restricted Boltzmann machine (RBM) in R</a>.
-In this one, I will compare the algorithm and its results to the Helmholtz Machine, which uses the wake-sleep algorithm.</p>
-<p>The basic idea behind the wake-sleep algorithm is that the model learns in two alternating phases.
-In the wake phase, random values for the hidden nodes are generated according to the expectations of the recognition network, then the generative network weights are adjusted.
-In the sleep phase, random values for the hidden nodes and the data are generated according to the generative network, then the recognition weights are adjusted.
-This process trains both the recognition and generative network, and at a good solution, the two should be nearly the same.
-The HM with the wake-sleep algorithm differs from the RBM in that the RBM has only one set of weights for both the top-down and bottom-up expectations for each node.</p>
-<p>We can generate data for an HM the same way as the RBM, first by setting up a list <code>L</code> with the model structure:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; L
-[[1]]
-[1] &#34;bias&#34;
-
-[[2]]
- [1] &#34;x1&#34;  &#34;x2&#34;  &#34;x3&#34;  &#34;x4&#34;  &#34;x5&#34;  &#34;x6&#34;  &#34;x7&#34;  &#34;x8&#34;  &#34;x9&#34;  &#34;x10&#34; &#34;x11&#34; &#34;x12&#34; &#34;x13&#34; &#34;x14&#34; &#34;x15&#34; &#34;x16&#34; &#34;x17&#34; &#34;x18&#34; &#34;x19&#34; &#34;x20&#34;
-
-[[3]]
-[1] &#34;h1_1&#34; &#34;h1_2&#34; &#34;h1_3&#34; &#34;h1_4&#34; &#34;h1_5&#34; &#34;h1_6&#34; &#34;h1_7&#34; &#34;h1_8&#34;
-</code></pre></div><p>Then I used a single adjacency matrix for the entire generative model, <code>Wg</code>, so that I can repeatedly the same matrix multiplication, using <code>L</code> to subset the result each time:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rRBM &lt;- function(n, Wg) {
-  X&lt;-matrix(0, n, ncol(Wg), dimnames=list(NULL,colnames(Wg)) )
-  X[,1]&lt;-1
-  for(i in Q:2 ){
-    X[, L[[i]] ] &lt;- (X %*% t(Wg))[, L[[i]] ]
-    X[, L[[i]] ] &lt;- matrix( rbinom(prod(dim(X[, L[[i]] ])), size=1, c(lgt(X[, L[[i]] ])) ),dim(X[, L[[i]] ])[1],dim(X[, L[[i]] ])[2] )
-  }
-  return(X)
-}
-</code></pre></div><p>The wake-sleep algorithm code is given here, first with the wake phase, using <code>Wr</code> to generate node values from the bottom up:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">for(iter in 1:maxIter){
-  dat.chunk&lt;-dat[sample(1:nrow(dat), size=chunkSize, replace=FALSE),]
-  X[,L[[2]]]&lt;-dat.chunk
-
-  lr&lt;-lr.s*temp[iter]
-  for(i in 3:Q){
-    X[, L[[i]] ] &lt;- lgt(X %*% t(Wr))[, L[[i]] ]
-    X[, L[[i]] ] &lt;- matrix( rbinom(prod(dim(X[, L[[i]] ])), size=1, c(X[, L[[i]] ]) ),dim(X[, L[[i]] ])[1],dim(X[, L[[i]] ])[2] )
-  }
-  X.p &lt;- lgt(X %*% t(Wg))
-  X.p[,1]&lt;-1
-  Wg.gr&lt;- t((t(X)%*%(X-X.p))/nrow(X))
-  Wg[Wg.f]&lt;- Wg[Wg.f]  +  lr*Wg.gr[Wg.f]
-
-</code></pre></div><p>Then the sleep phase, using <code>Wg</code> to generate node values from the top-down:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">  X2&lt;-X
-  for(i in Q:2 ){
-    X2[, L[[i]] ] &lt;- lgt(X2 %*% t(Wg))[, L[[i]] ]
-    X2[, L[[i]] ] &lt;- matrix( rbinom(prod(dim(X2[, L[[i]] ])), size=1, c(X2[, L[[i]] ]) ),dim(X2[, L[[i]] ])[1],dim(X2[, L[[i]] ])[2] )
-  }
-  X.p &lt;- lgt(X2 %*% t(Wr))
-  X.p[,1]&lt;-1
-  Wr.gr&lt;- t((t(X2)%*%(X2-X.p))/nrow(X2))
-  Wr[Wr.f]&lt;- Wr[Wr.f]  +  lr*Wr.gr[Wr.f]
-</code></pre></div><p>Note that both use the same local delta rule to obtain the gradient.
-It is computed as the the outer product of the observed and predicted values.</p>
-<p>Here are the some results from an initial run with the same dimensions as the RBM, again looking at a redacted (|r|&gt;.7 only) correlation matrix of the data-generating weights with the estimated weights:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Iteration 61900 
-
-Learning rate: 0.3 
-
-Hidden Layer 1 and 2 weight vector correlations: 0.3 
-     bias h1_1 h1_2  h1_3  h1_4  h1_5 h1_6 h1_7 h1_8
-bias                                                
-h1_1                -0.78                           
-h1_2      0.98                                      
-h1_3                      -0.99                     
-h1_4                                                
-h1_5           0.99                                 
-h1_6                                            0.99
-h1_7                                  0.99          
-h1_8                            -0.99               
-     h2_1  h2_2 h2_3  h2_4
-h2_1            -0.8      
-h2_2                 -0.83
-h2_3                      
-h2_4      -0.76           
-</code></pre></div><p>Note that I had to use the first matrix to depermute the first hidden layer in order to calculate the correlations for the second hidden layer.
-It&rsquo;s missing one node on both accounts, but pretty cool to see both layers recovering the data-generating weights as promised!
-Since the learning is stochastic, it will (in theory) learn those last couple weight vectors in the course of eternity.</p>
-<p>I increased the complexity of the simulated data and the model, then left it running for a much longer time.
-It looks like it was pretty successful:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Iteration 900000 
-
-Learning rate: 0.1 
-
-Hidden Layer 1 and 2 weight vector correlations: 0.1 
-      bias h1_1  h1_2 h1_3 h1_4  h1_5 h1_6 h1_7  h1_8  h1_9 h1_10 h1_11 h1_12 h1_13 h1_14 h1_15 h1_16 h1_17 h1_18 h1_19 h1_20 h1_21 h1_22 h1_23 h1_24 h1_25 h1_26 h1_27 h1_28 h1_29 h1_30
-bias                                                                                                                                                                                     
-h1_1                                                                                                               0.98                                                                  
-h1_2                                                                                                                                                         0.93                        
-h1_3                                                                                                                                -0.99                                                
-h1_4                                                                                                                                                              -0.99                  
-h1_5                                       0.99                                                                                                                                          
-h1_6                                                  -0.99                                                                                                                              
-h1_7                                                                                                        -0.97                                                                        
-h1_8                                                                           0.98                                                                                                      
-h1_9                  0.98                                                                                                                                                               
-h1_10                                                                                                                                                                                    
-h1_11                                                                                                                                      0.98                                          
-h1_12      0.95                                                                                                                                                                          
-h1_13                                                             -0.83                                                                                                                  
-h1_14                                                                                           -0.96                                                                                    
-h1_15                                                                                                                                                  0.98                              
-h1_16                                                                                                                                                                          0.97      
-h1_17           -0.96                                                                                                                                                                    
-h1_18                                                                                                                                                                                    
-h1_19                                           -0.95                                                                                                                                    
-h1_20                                                                               -0.98                                                                                                
-h1_21                                                                    0.98                                                                                                            
-h1_22                                                       -0.96                                                                                                                        
-h1_23                           -0.98                                                                                                                                                    
-h1_24                                                                                                                          0.97                                                      
-h1_25                                                                                                                                           -0.96                                    
-h1_26                                                                                                 -0.97                                                                              
-h1_27                                                                                                                                                                                0.93
-h1_28                                                                                     -0.93                                                                                          
-h1_29                      0.98                                                                                                                                                          
-h1_30                                                                                                                                                                    0.97            
-     h2_1 h2_2 h2_3 h2_4  h2_5 h2_6  h2_7 h2_8
-h2_1                     -0.94                
-h2_2      0.87                                
-h2_3                           0.89           
-h2_4                0.89                      
-h2_5                                       0.8
-h2_6           0.96                           
-h2_7                                -0.93     
-h2_8 0.78                                     
-</code></pre></div>
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://kmckee90.github.io/tags/code/">code</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/rbm/">rbm</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/boltzmann/">boltzmann</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/helmholtz/">helmholtz</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/neural-network/">neural network</a>&nbsp;
-        
-    </div>
-    
-
-</article>
+            <li class="previous">
+              <a href="https://kmckee90.github.io/post/stochres/" data-toggle="tooltip" data-placement="top" title="Stochastic resonance">&larr; Previous Post</a>
+            </li>
           
-            <article class="post-preview">
-    <a href="https://kmckee90.github.io/post/rbm1/">
-        <h2 class="post-title">Binary neural nets in R, part 1: Restricted Boltzmann Machine</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 17, 2021
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        <p><a href="https://github.com/kmckee90/Neural_Nets_in_R/blob/main/Boltzmann.R">github source for this project</a></p>
-<p>For most statistical models, you can verify that they work by simulating data from a set of parameter values, then fitting the model to the simulated data and seeing how well it recovers those values.
-With artificial neural networks it is common to have many local solutions and a stochastic learning algorithm, so while an ANN may find an good solution on the simulated data, it is far less likely to match the data-generating parameters.
-I was surprised to read about the generative network called the Helmholtz Machine (HM), for which this appears to not be the case.</p>
-<p>The HM is one of a succession of binary networks including the Hopfield network, Boltzmann machine, the restricted Boltzmann machine (RBM).
-Each model in some way learns the joint probability distribution of many binary variables, with the latter three using binary hidden nodes.
-The main difference between the RBM and the HM is that the former computes a gradient for the weights by a kind of Gibbs sampling of the hidden nodes, whereas the ladder learns by &ldquo;dreaming&rdquo; fake data from a separate generative network.
-In the HM, the recognition and generation networks are used to alternately adjust each other&rsquo;s weights.
-The solution of an HM is expected to minimize the Kullbeck-Liebler divergence of the real data and the generative distribution.
-In a way that I don&rsquo;t fully understand yet, this leads to learning deeper hidden structure that better matches the data-generating structure.</p>
-<p>The idea of an ANN that better learns parsimonious, data-generating structures is appealing.
-Do GANs that learn to, say, generate photos of faces like <a href="https://thispersondoesnotexist.com/">this</a> accurately infer the genetically-driven axes of facial structure?
-Would we find nodes in the network that accurately guess the underlying genes?
-Something like a GWAS of hidden layer scores would be able to answer that.
-On a different note, does this help explain how all the various generative behaviors of humans, talking, imitating, drawing, help us come up with theoretical models of our experience?
-I want to come back to these questions later.</p>
-<p>For now, I was just interested in experimenting with the RBM and HM. There isn&rsquo;t much implementation of either in R, but I did find <a href="https://www.r-bloggers.com/2013/01/restricted-boltzmann-machines-in-r/">this tutorial</a>.
-My goal was to learn about both models by coding them from scratch in R. Then I could test the difference for myself.
-As the example code that I found was not abstracted to take any model dimensions (number of layers, nodes per each layer), I had to think of a way to do this that would allow quick and convenient manipulations.
-It seemed easiest to set up a list object <code>L</code> containing the name and location of each part of the model:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; L
-[[1]]
-[1] &#34;bias&#34;
-
-[[2]]
- [1] &#34;x1&#34;  &#34;x2&#34;  &#34;x3&#34;  &#34;x4&#34;  &#34;x5&#34;  &#34;x6&#34;  &#34;x7&#34;  &#34;x8&#34;  &#34;x9&#34;  &#34;x10&#34; &#34;x11&#34; &#34;x12&#34; &#34;x13&#34; &#34;x14&#34; &#34;x15&#34; &#34;x16&#34; &#34;x17&#34; &#34;x18&#34; &#34;x19&#34; &#34;x20&#34;
-
-[[3]]
-[1] &#34;h1_1&#34; &#34;h1_2&#34; &#34;h1_3&#34; &#34;h1_4&#34; &#34;h1_5&#34; &#34;h1_6&#34; &#34;h1_7&#34; &#34;h1_8&#34;
-</code></pre></div><p>The top level indices (1-3) are the layers, and the strings within each are the names of nodes.
-With this, I could set up the network as one big adjacency matrix with the contents of <code>L</code> as dimnames (inspired by the RAM notation of structural equation models).
-Then, I could code the entire thing with simple matrix multiplications while using <code>L</code> to index the resulting block sub-matrices representing the expectations of each layer conditional on those above or below it.
-This approach is slow because it is in R and it involves a lot of unnecessary computations over all the zero-values, but it seemed like a balance between making the code abstract and concise.</p>
-<p>Data for either a Boltzmann  or Helmholz machine can be generated like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rRBM &lt;- function(n, Wg) {
-  X&lt;-matrix(0, n, ncol(Wg), dimnames=list(NULL,colnames(Wg)) )
-  X[,1]&lt;-1
-  for(i in Q:2 ){
-    X[, L[[i]] ] &lt;- (X %*% t(Wg))[, L[[i]] ]
-    X[, L[[i]] ] &lt;- matrix( rbinom(prod(dim(X[, L[[i]] ])), size=1, c(lgt(X[, L[[i]] ])) ),dim(X[, L[[i]] ])[1],dim(X[, L[[i]] ])[2] )
-  }
-  return(X)
-}
-</code></pre></div><p>where <code>Wg</code> is an adjacency matrix for the entire network, including both observed and hidden nodes.
-Simulation starts from the top of the network and propagates random samples downward.</p>
-<p>The process of calculating the gradient of <code>Wg</code> is similar and uses a few variations on the same loop above.
-Starting with just the RBM for now, this code obtains the gradient by generating random node values up the network conditional on lower layers, then back down to the data conditional on the upper layers.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">calcGrad &lt;- function(X, Wr, Wg) {
-  Gr &lt;- Gr2 &lt;- Wr
-  for (i in 3:Q) {
-    X[, L[[i]]] &lt;- (X %*% t(Wr))[, L[[i]]]
-    X[, L[[i]]] &lt;-  matrix(rbinom(prod(dim(X[, L[[i]]])), size = 1, c(lgt(X[, L[[i]]]))), dim(X[, L[[i]]])[1], dim(X[, L[[i]]])[2])
-    Gr[L[[i]], unlist(L[c(1, i - 1)])] &lt;- (t(X) %*% X / nrow(X))[L[[i]], unlist(L[c(1, i - 1)])]
-  }
-  Gr[L[[2]], L[[1]]] &lt;- (t(X) %*% X / nrow(X))[L[[2]], L[[1]]]
-  X2 &lt;- X
-  for (i in (Q - 1):2) {
-    X2[, L[[i]]] &lt;- (X2 %*% t(Wg))[, L[[i]]]
-    X2[, L[[i]]] &lt;-  matrix(rbinom(prod(dim(X2[, L[[i]]])), size = 1, c(lgt(X2[, L[[i]]]))), dim(X2[, L[[i]]])[1], dim(X2[, L[[i]]])[2])
-  }
-  for (i in 3:Q) {
-    X2[, L[[i]]] &lt;-  lgt( (X2 %*% t(Wr))[, L[[i]] ] ) 
-    if(i&lt;Q) X2[, L[[i]]] &lt;- matrix(rbinom(prod(dim(X2[, L[[i]]])), size = 1, c( X2[, L[[i]]] )), dim(X2[, L[[i]]])[1], dim(X2[, L[[i]]])[2])
-    Gr2[L[[i]], unlist(L[c(1, i - 1)])] &lt;- (t(X2) %*% X2 / nrow(X))[L[[i]], unlist(L[c(1, i - 1)])]
-  }
-  Gr2[L[[2]], L[[1]]] &lt;- (t(X2) %*% X2 / nrow(X) )[L[[2]], L[[1]]]
-  dG &lt;- Gr - Gr2
-  return(dG)
-}
-</code></pre></div><p>I regret that R lists subscript with double brackets <code>[[]]</code> so they kind of dominate the code. I guess the rest of it is pretty ugly too.</p>
-<p>This next bit is the essential loop for updating.
-In the RBM, the weights for going up and down the network are not actually different.
-You can see here that I&rsquo;m training the generative weight matrix <code>Wg</code> by just taking the transposed gradient of <code>Wr</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">for (i in 1:nIter) {
-  Gr &lt;- calcGrad(X[sample(1:nrow(X),size=500,replace=F),], Wr, Wg)
-  Gg &lt;- Gr
-  Gg[-1, -1] &lt;- t(Gr)[-1, -1]
-  MSr &lt;- MSr * momentum + Gr  
-  MSg &lt;- MSg * momentum + Gg
-  Wr[Wr != 0] &lt;- Wr[Wr != 0] + MSr[Wr != 0] * lrate
-  Wg[Wg != 0] &lt;- Wg[Wg != 0] + MSg[Wg != 0] * lrate
-  ...
-</code></pre></div><p>For the RBM with one layer, I could simply take the redacted correlation matrix (showing |r|&gt;.7 only) of the data-generating node weights with those estimated:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    h1_1 h1_2 h1_3  h1_4 h1_5  h1_6 h1_7 h1_8
-h1_1      0.99                                
-h1_2           0.98                           
-h1_3                -0.98                     
-h1_4                                          
-h1_5                           -0.97          
-h1_6                                      0.98
-h1_7 0.98                                     
-h1_8                                 0.98     
-
-Iteration 7100
-</code></pre></div><p>This was the result after running for a few seconds. Not bad, but I noticed that it seems to miss one node on most attempts.
-And without any <em>a priori</em> constraints or priors in the model, we should expect the nodes to be permuted and flipped like that.</p>
-<p>A second run yielded better results:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">     h1_1 h1_2 h1_3 h1_4  h1_5 h1_6 h1_7 h1_8
-h1_1                                0.99     
-h1_2           0.99                          
-h1_3                0.99                     
-h1_4                     -0.98               
-h1_5                                     0.99
-h1_6 0.98                                    
-h1_7      0.98                               
-h1_8                           0.99          
-
-Iteration 3325
-</code></pre></div><p>However, including any additional layers results in different solutions at the first layer and I lose these correlations.
-In another post I will go through my HM code, which gave much better results.</p>
-
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://kmckee90.github.io/tags/code/">code</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/rbm/">rbm</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/boltzmann/">boltzmann</a>&nbsp;
-        
-        <a href="https://kmckee90.github.io/tags/neural-network/">neural network</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-        </div>
+        </ul>
+      
+
+
+      
         
-      </div>
+        
+      
+
     </div>
   </div>
+</div>
 
       
 <footer>
@@ -791,7 +576,7 @@ In another post I will go through my HM code, which gave much better results.</p
               </li>
           
           <li>
-            <a href="/tags/boltzmann/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

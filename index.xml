@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kmckee90@gmail.com (Kevin McKee)</managingEditor>
     <webMaster>kmckee90@gmail.com (Kevin McKee)</webMaster>
-    <lastBuildDate>Sat, 20 Mar 2021 22:42:13 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 09:38:21 -0400</lastBuildDate><atom:link href="https://kmckee90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Binary neural nets in R, part 3: Recurrent Helmholtz Machine</title>
+      <link>https://kmckee90.github.io/post/recurrenthelmholtz/</link>
+      <pubDate>Thu, 25 Mar 2021 09:38:21 -0400</pubDate>
+      <author>kmckee90@gmail.com (Kevin McKee)</author>
+      <guid>https://kmckee90.github.io/post/recurrenthelmholtz/</guid>
+      <description>github repository for this project
+Part 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, Hinton already published the idea in 1995. I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.</description>
+    </item>
+    
     <item>
       <title>Stochastic resonance</title>
       <link>https://kmckee90.github.io/post/stochres/</link>
@@ -140,7 +150,7 @@ Interests Psychology My undergraduate degree is in Psychology but I have not car
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kmckee90@gmail.com (Kevin McKee)</author>
       <guid>https://kmckee90.github.io/page/code/</guid>
-      <description>Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine  Dynamical Systems  Discretization in 3 languages Stochastic Resonance  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy.</description>
+      <description>Stan code  Non-Normal Factor Model Structural Ordinal Item Response Theory with a Latent Interaction  Neural networks:  Binary neural nets in R, part 1: Restricted Boltzmann Machine Binary neural nets in R, part 2: Helmholtz Machine Binary neural nets in R, part 3: Recurrent Helmholtz Machine  Dynamical Systems  Discretization in 3 languages Stochastic Resonance  Most coding projects can be found on github. Some are not yet prepared for public consumption, meaning completely lacking in annotations, full of commented out zombie code, and generally messy.</description>
     </item>
     
     <item>
