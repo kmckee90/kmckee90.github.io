@@ -248,12 +248,12 @@ I used his paper as a guide to be sure nothing was markedly different about the 
 Notice that not only are they fixed, but they are not generated in the sleep phase of learning.
 Because of this, we can also go on to specify the model in the third row, where all current layers draw from all stored lags.
 The effect is something akin to both lateral connectivity within-layer and connections that can skip layers.</p>
-<p>One unexplored thought is that of unfixed lag values in the generative stage.
-What does it mean if the model can dream retroactively?
+<p>One unexplored thought is that of un-fixed lagged values of the hidden nodes in the generative (i.e., sleep) phase.
+What would it mean if the model can dream retroactively?
 Would it help with learning?
 It is true of human memory that nothing is fixed.
 Every new recollection of a memory alters it slightly and some memories can be altogether fabricated.
-In dreams, it&rsquo;s more common than not for me to experience false memories, or a sense of continuity from before moment of experience.
+In dreams, it&rsquo;s more common than not for me to experience false memories or a sense of continuity from before the moment of experience.
 I suspect the most sensible configuration would be to fix the memory of the data but allow past values of hidden nodes at higher layers to be re-evaluated with the addition of new information.</p>
 <p>For now, I&rsquo;ll keep it as simple as possible and let all lagged values remain fixed.
 To get started, I changed the list <code>L</code> to have another level of depth, allowing time lags, as hinted by the additional subscript on the variable names <code>_l0</code>&hellip;<code>_l3</code>:
