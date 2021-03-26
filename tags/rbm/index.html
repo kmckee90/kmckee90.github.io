@@ -228,7 +228,7 @@
   <i class="fas fa-calendar"></i>&nbsp;Posted on March 25, 2021
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
   
   
   
@@ -399,10 +399,20 @@ Early iterations also show convergence to various local equilibria, likely due t
 <span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;argument tobacco echo excludes echo discretion grew 1860 foot flying flying flying forces forces flying flying flying forces forces forces&#34;</span>
 <span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;bridges bottom advancing converted converted advances compromise; advances concern compromise; compromise shut compromise; compromise; compromise; compromise; compromise; compromise; compromise; compromise;&#34;</span>
 <span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;pbs none tariff patriotism thanks more obligations patriotism patriotism owned owners patriotism patriotism patriotism patriotism patriotism peacemakers patriotism patriotism patriotism&#34;</span>
-<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;292 280 45 mont operate morris motivation most 45 open 396 396 45 0.1 396 100th 117 50 45 462&#34;</span>
-<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;pbs none tariff patriotism thanks more obligations patriotism patriotism owned owners patriotism patriotism patriotism patriotism patriotism peacemakers patriotism patriotism patriotism&#34;</span>
-</code></pre></div><p>I will update this with better results if I can obtain them with more training.</p>
+</code></pre></div><p>Picking a much simpler model seems to help, but it is probably just able to find a solution in far less time.
+With <code>modelDims&lt;-c(5); lags&lt;-4</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;turn jefferson five and triumph ( 30 burning were offices divisions too church but - means right disbursement 1854 sanctioned&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;the more rebuilding .[ presbyterian turn motivation employed turned near void theme turmoil semi 22 amounted 117 influenced dead urging&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;went ground urbanized inside traded confederation famously highly interior , erected &#39;s faded new fell deciding virginia apart opinion monitor&#34;</span>
+<span class="n">Simulation</span><span class="o">:</span>	<span class="n">[1]</span> <span class="s">&#34;coulter were fell forfeit; pin shadow truly uniformed were revolt enter NA 120 ulysses , university 1857 waldo themes adept&#34;</span>
 
+</code></pre></div><p>Still hard to distinguish from noise, so I guess I&rsquo;m looking for an increased frequency of &ldquo;the&rdquo;, &ldquo;of&rdquo;, &ldquo;or&rdquo;, &ldquo;but&rdquo;, etc.</p>
+<p>Going back to a more complex but different model, here are some simulations from 209000 iterations of model dimension <code>c(10,8,6,4)</code> with 5 lags.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Simulation:	[1] &#34;NA jeb control tired results bay wagner ( the 112 the presidency newly enthusiasm towards the ferocious forage flotilla dramatically&#34;
+Simulation:	[1] &#34;miles off the don absolutely violent outgoing emerged were heartland north towards the 260 cover rich NA absolutely overthrow &#39;s&#34;
+Simulation:	[1] &#34;stationing menace destination 280 the aged religious NA NA that work otherwise militia nullify divisions produced . legal wise .[&#34;
+Simulation:	[1] &#34;homestead 15 use the comprised motivation admission were the single rank the norfolk ) fence enforcement converting the whether were&#34;
+</code></pre></div>
     </div>
 
     
