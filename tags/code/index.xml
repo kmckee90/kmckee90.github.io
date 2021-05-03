@@ -48,15 +48,5 @@ In the last post, I looked at coding a restricted Boltzmann machine (RBM) in R. 
 The basic idea behind the wake-sleep algorithm is that the model learns in two alternating phases. In the wake phase, random values for the hidden nodes are generated according to the expectations of the recognition network, then the generative network weights are adjusted.</description>
     </item>
     
-    <item>
-      <title>Binary neural nets in R, part 1: Restricted Boltzmann Machine</title>
-      <link>https://kmckee90.github.io/post/rbm1/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 -0400</pubDate>
-      <author>kmckee90@gmail.com (Kevin McKee)</author>
-      <guid>https://kmckee90.github.io/post/rbm1/</guid>
-      <description>github source for this project
-For most statistical models, you can verify that they work by simulating data from a set of parameter values, then fitting the model to the simulated data and seeing how well it recovers those values. With artificial neural networks it is common to have many local solutions and a stochastic learning algorithm, so while an ANN may find an good solution on the simulated data, it is far less likely to match the data-generating parameters.</description>
-    </item>
-    
   </channel>
 </rss>
