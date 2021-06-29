@@ -199,7 +199,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 25, 2021
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 29, 2021
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -225,6 +225,41 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://kmckee90.github.io/post/ccnlab/">
+        <h2 class="post-title">New position at CCNLab</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 29, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        <p>As of June 21, 2021 I have left my job as a biostatistician at Virginia Tech and joined UC Davis <a href="https://ccnlab.org/">Computational Cognitive Neuroscience lab</a> lab as a postdoc! I cannot express how exciting it has been to discover this kind of research but to also land an opportunity to train and do it myself. The lab has a variety of ongoing research involving biologically-constrained spiking and rate coded neural networks in the <a href="https://en.wikipedia.org/wiki/Leabra">Leabra</a> framework (<a href="https://github.com/emer/leabra">github</a>). There is an excellent <a href="https://compcogneuro.org/">textbook written and published for free online</a>] by the PI, Randy O&rsquo;Reilly.</p>
+<p>The research brings together the cellular, anatomical, statistical (information-processing), and behavioral aspects of psychology into unified theoretical models. The models simulate the tasks normally performed by human or other mammal subjects in behavioral experiments. Having worked in such labs that study various molecular and genetic aspects of schizophrenia and drug addiction, it is like I have been simply observing arrangements of chess pieces on boards for many years. Reading the CCN textbook is like finally being told the rules of the game. Specifically, the rules are the statistical functions of the neural population that lead to perceptions and actions.</p>
+<p>So far there has been some interest in Bayesian data analysis and hierarchical models, so I will continue building my library of example models and tutorials.</p>
+
+    </div>
+
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://kmckee90.github.io/post/recurrenthelmholtz/">
@@ -393,12 +428,9 @@ There is however extra code appending the matrix of complete node values to stor
      <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;\n\n&#34;</span><span class="p">)</span>
    <span class="p">}</span>
 <span class="p">}</span>
-
-<span class="n">I</span> <span class="n">am</span> <span class="n">training</span> <span class="n">this</span> <span class="n">model</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Wikipedia</span> <span class="n">page</span> <span class="n">for</span> <span class="n">the</span> <span class="n">American</span> <span class="n">civil</span> <span class="n">war.</span>
-<span class="n">I</span> <span class="n">mapped</span> <span class="n">every</span> <span class="n">word</span> <span class="n">to</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">vector</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">can</span> <span class="n">just</span> <span class="n">learn</span> <span class="n">successions</span> <span class="n">of</span> <span class="n">them</span><span class="o">:</span>
-
-<span class="n">```r</span>
-<span class="n">dat</span><span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;textData.csv&#34;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
+</code></pre></div><p>I am training this model on the Wikipedia page for the American civil war.
+I mapped every word to a binary vector, so it can just learn successions of them:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">dat</span><span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;textData.csv&#34;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
 <span class="n">p</span><span class="o">&lt;-</span><span class="nf">ceiling</span><span class="p">(</span><span class="nf">log2</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">dat</span><span class="p">))))</span>
 <span class="n">bitMap</span><span class="o">&lt;-</span><span class="nf">expand.grid</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span> <span class="nf">list</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">1</span><span class="p">),</span> <span class="n">p</span><span class="p">))</span><span class="n">[1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">dat</span><span class="p">)),</span><span class="n">]</span>
 <span class="nf">rownames</span><span class="p">(</span><span class="n">bitMap</span><span class="p">)</span><span class="o">&lt;-</span><span class="nf">sort</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
