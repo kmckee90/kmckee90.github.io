@@ -199,7 +199,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 29, 2021
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 22, 2021
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -227,6 +227,78 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://kmckee90.github.io/post/rsnnshiny/">
+        <h2 class="post-title">Unsupervised learning in a spiking neural net</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 22, 2021
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        <p>As an exercise, I wrote a spiking neural network in R, implemented in a <a href="https://klmckee.shinyapps.io/spikingneuralnetul/">shiny app</a>, that performs some rudimentary unsupervised learning.
+The app is embedded below. A small set of patterns is used to generate an input spike sequence, and a single hidden layer of spiking neurons uses a leaky integrate and fire (LIF) model with spike-timing dependent plasticity (STDP) to learn the underlying pattern components. The hidden layer uses lateral inhibition, or inhibitory connections among hidden layer neurons, to sparsify the solution.
+Increasing the g-bar(inh.) parameter results in stronger inhibition and less redundancy in the hidden layer.
+There are some difficulty settings that increase the amount of overlap between the generative patterns, and it can be seen that a single-layer network struggles to deal with that overlap.</p>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      #wrap {
+        width: 100%;
+        height: 800px;
+        padding: 0;
+        overflow: hidden;
+      }
+      #scaled-frame {
+        width: 140% ;
+        height: 1500px;
+        border: 0px;
+      }
+      #scaled-frame {
+        zoom: 0.7;
+        -moz-transform: scale(0.7);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.7);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.7);
+        -webkit-transform-origin: 0 0;
+      }
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        #scaled-frame {
+          zoom: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <iframe id="scaled-frame" src="https://klmckee.shinyapps.io/spikingneuralnetul/"></iframe>
+    </div>
+  </body>
+</html>
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://kmckee90.github.io/post/ccnlab/">
         <h2 class="post-title">New position at CCNLab</h2>
         
@@ -251,7 +323,7 @@
 
     </p>
     <div class="post-entry">
-        <p>As of June 21, 2021 I have left my job as a biostatistician at Virginia Tech and joined UC Davis <a href="https://ccnlab.org/">Computational Cognitive Neuroscience lab</a> lab as a postdoc! I cannot express how exciting it has been to discover this kind of research but to also land an opportunity to train and do it myself. The lab has a variety of ongoing research involving biologically-constrained spiking and rate coded neural networks in the <a href="https://en.wikipedia.org/wiki/Leabra">Leabra</a> framework (<a href="https://github.com/emer/leabra">github</a>). There is an excellent <a href="https://compcogneuro.org/">textbook written and published for free online</a>] by the PI, Randy O&rsquo;Reilly.</p>
+        <p>As of June 21, 2021 I have left my job as a biostatistician at Virginia Tech and joined UC Davis <a href="https://ccnlab.org/">Computational Cognitive Neuroscience lab</a> lab as a postdoc! I cannot express how exciting it has been to discover this kind of research but to also land an opportunity to train and do it myself. The lab has a variety of ongoing research involving biologically-constrained spiking and rate coded neural networks in the <a href="https://en.wikipedia.org/wiki/Leabra">Leabra</a> framework (<a href="https://github.com/emer/leabra">github</a>). There is an excellent <a href="https://compcogneuro.org/">textbook written and published for free online</a> by the PI, Randy O&rsquo;Reilly.</p>
 <p>The research brings together the cellular, anatomical, statistical (information-processing), and behavioral aspects of psychology into unified theoretical models. The models simulate the tasks normally performed by human or other mammal subjects in behavioral experiments. Having worked in such labs that study various molecular and genetic aspects of schizophrenia and drug addiction, it is like I have been simply observing arrangements of chess pieces on boards for many years. Reading the CCN textbook is like finally being told the rules of the game. Specifically, the rules are the statistical functions of the neural population that lead to perceptions and actions.</p>
 <p>So far there has been some interest in Bayesian data analysis and hierarchical models, so I will continue building my library of example models and tutorials.</p>
 
@@ -1267,40 +1339,16 @@ h2_8 0.78
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://kmckee90.github.io/post/first/">
-        <h2 class="post-title">First post</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 11, 2021
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        <p>As of this first post, I&rsquo;ll be using this site to document my various projects, code, minor discoveries, or other thoughts that probably won&rsquo;t be published anywhere else.</p>
-
-    </div>
-
-    
-
-</article>
-          
         </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="https://kmckee90.github.io/post/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
         
       </div>
     </div>
