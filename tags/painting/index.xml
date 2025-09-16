@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Painting on Kevin L. McKee</title>
-    <link>http://localhost:1313/tags/painting/</link>
+    <link>https://kmckee90.github.io/tags/painting/</link>
     <description>Recent content in Painting on Kevin L. McKee</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>kmckee90@gmail.com</managingEditor>
     <webMaster>kmckee90@gmail.com</webMaster>
     <lastBuildDate>Fri, 12 Mar 2021 21:40:23 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/painting/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kmckee90.github.io/tags/painting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Painting a harpsichord lid</title>
-      <link>http://localhost:1313/posts/harpsichordprocess/</link>
+      <link>https://kmckee90.github.io/posts/harpsichordprocess/</link>
       <pubDate>Fri, 12 Mar 2021 21:40:23 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>http://localhost:1313/posts/harpsichordprocess/</guid>
-      <description>&lt;p&gt;Some process photos from my painting on a harpsichord lid. (I&amp;rsquo;m using this post to figure out getting images into blog posts and such.)&lt;/p&gt;&#xA;&lt;p&gt;I painted this harpsichord lid for a commission in 2016. I started with a photoshop mockup:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/art/harpsichord_process/0.jpg&#34; alt=&#34;Harpsichord Process 0&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The first stages of the actual painting are interesting to look back on because they show how fundamental color and movement are to the composition:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/art/harpsichord_process/1.jpg&#34; alt=&#34;Harpsichord Process 1&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/art/harpsichord_process/2.jpg&#34; alt=&#34;Harpsichord Process 2&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/img/art/harpsichord_process/3.jpg&#34; alt=&#34;Harpsichord Process 3&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://kmckee90.github.io/posts/harpsichordprocess/</guid>
+      <description>&lt;p&gt;Some process photos from my painting on a harpsichord lid. (I&amp;rsquo;m using this post to figure out getting images into blog posts and such.)&lt;/p&gt;&#xA;&lt;p&gt;I painted this harpsichord lid for a commission in 2016. I started with a photoshop mockup:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://kmckee90.github.io/img/art/harpsichord_process/0.jpg&#34; alt=&#34;Harpsichord Process 0&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The first stages of the actual painting are interesting to look back on because they show how fundamental color and movement are to the composition:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://kmckee90.github.io/img/art/harpsichord_process/1.jpg&#34; alt=&#34;Harpsichord Process 1&#34;&gt;&#xA;&lt;img src=&#34;https://kmckee90.github.io/img/art/harpsichord_process/2.jpg&#34; alt=&#34;Harpsichord Process 2&#34;&gt;&#xA;&lt;img src=&#34;https://kmckee90.github.io/img/art/harpsichord_process/3.jpg&#34; alt=&#34;Harpsichord Process 3&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

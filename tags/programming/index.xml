@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Kevin L. McKee</title>
-    <link>http://localhost:1313/tags/programming/</link>
+    <link>https://kmckee90.github.io/tags/programming/</link>
     <description>Recent content in Programming on Kevin L. McKee</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>kmckee90@gmail.com</managingEditor>
     <webMaster>kmckee90@gmail.com</webMaster>
     <lastBuildDate>Sat, 20 Mar 2021 21:47:13 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kmckee90.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Discretization in 3 languages</title>
-      <link>http://localhost:1313/posts/discretization/</link>
+      <link>https://kmckee90.github.io/posts/discretization/</link>
       <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>http://localhost:1313/posts/discretization/</guid>
+      <guid>https://kmckee90.github.io/posts/discretization/</guid>
       <description>&lt;p&gt;There is an obscure and useful function that makes it easy to fit stochastic differential equations to data insofar as the model can be linearized without causing too much trouble. The function discretizes the continuous-time (i.e., differential equation) state matrices &lt;code&gt;A&lt;/code&gt;, the drift or state transition matrix, &lt;code&gt;B&lt;/code&gt;, the input or covariate coefficient matrix, and &lt;code&gt;Q&lt;/code&gt;, diffusion or noise covariance matrix. That means that the function essentially takes the differential equation in matrix form and solves it for a given time step. The discretized matrices function like those of an autoregressive process. Some details of this approach and what this does can be found &lt;a href=&#34;https://en.wikipedia.org/wiki/Discretization&#34;&gt;here&lt;/a&gt; but not exactly a complete implementation, namely with matrix &lt;code&gt;B&lt;/code&gt;. So this is one of those code blocks I just have backed up in several project folders in various languages.&lt;/p&gt;</description>
     </item>
   </channel>
