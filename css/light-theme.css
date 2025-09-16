@@ -1,0 +1,70 @@
+/* Light theme overrides for Beautiful Hugo */
+
+/* Main background */
+body {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* Header/navbar */
+.navbar-custom {
+    background-color: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav li a {
+    color: #333333 !important;
+}
+
+.navbar-custom .nav li a:hover {
+    color: #007bff !important;
+}
+
+/* Content areas */
+.intro-header.no-img {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+.blog-post {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa !important;
+    color: #333333 !important;
+    border-top: 1px solid #dee2e6 !important;
+}
+
+footer a {
+    color: #333333 !important;
+}
+
+footer a:hover {
+    color: #007bff !important;
+}
+
+/* Code blocks */
+pre {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    color: #333333 !important;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #007bff !important;
+    background-color: #f8f9fa !important;
+}
+
+/* Links */
+a {
+    color: #007bff !important;
+}
+
+a:hover {
+    color: #0056b3 !important;
+}
