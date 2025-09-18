@@ -8,8 +8,15 @@
     <language>en-us</language>
     <managingEditor>kmckee90@gmail.com</managingEditor>
     <webMaster>kmckee90@gmail.com</webMaster>
-    <lastBuildDate>Tue, 16 Sep 2025 15:45:19 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 18 Sep 2025 10:47:52 -0400</lastBuildDate>
     <atom:link href="https://kmckee90.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning to Explore Smarter and Faster</title>
+      <link>https://kmckee90.github.io/posts/metalearning-to-explore/</link>
+      <pubDate>Thu, 18 Sep 2025 10:47:52 -0400</pubDate><author>kmckee90@gmail.com</author>
+      <guid>https://kmckee90.github.io/posts/metalearning-to-explore/</guid>
+      <description>&lt;!-- Hook intro:  --&gt;&#xA;&lt;p&gt;Exploration is the drum beat of any intelligent, self-improving system.&lt;/p&gt;&#xA;&lt;!-- Videos:  --&gt;&#xA;&lt;div style=&#34;display:flex; gap:0; padding:0; margin:0;&#34;&gt;&#xA;  &lt;video src=&#34;https://kmckee90.github.io/m2e/fixed.webm&#34; style=&#34;width:33.333%; height:auto; display:block;&#34; autoplay muted loop playsinline controls&gt;&lt;/video&gt;&#xA;  &lt;video src=&#34;https://kmckee90.github.io/m2e/continual.webm&#34; style=&#34;width:33.333%; height:auto; display:block;&#34; autoplay muted loop playsinline controls&gt;&lt;/video&gt;&#xA;  &lt;video src=&#34;https://kmckee90.github.io/m2e/random.webm&#34; style=&#34;width:33.333%; height:auto; display:block;&#34; autoplay muted loop playsinline controls&gt;&lt;/video&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;Key:&#xA;&lt;span style=&#34;color:red;&#34;&gt;Red: visited locations. &lt;/span&gt;&#xA;&lt;span style=&#34;color:#ffff00;&#34;&gt;Yellow: Last path taken.&lt;/span&gt;&#xA;&lt;span style=&#34;color:#00ffff;&#34;&gt;Cyan: Lowest-density frontier.&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;Most modern AI systems are built on machine learning, and machine learning achieves nothing without good, comprehensive data about its task.&#xA;That&amp;rsquo;s why I&amp;rsquo;ve written a new paper, &lt;a href=&#34;https://arxiv.org/abs/2503.02831&#34;&gt;Meta-learning to Explore via Memory Density Feedback&lt;/a&gt;, demonstrating an improved approach to autonomous exploration.&#xA;Watch above as the new RL-based agent, able to see only its own current coordinates and output movements, nonetheless learns to rapidly probe various maze problems, pushing its frontier and returning to lesser visited areas along the way.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What kind of algorithms run in a soup?</title>
       <link>https://kmckee90.github.io/posts/snn-demo/</link>
