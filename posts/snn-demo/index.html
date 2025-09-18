@@ -290,6 +290,7 @@ When that entropy reaches its peak, global synchronization emerges once again, r
 <!-- How to use it -->
 <p>Adjusting the parameters of the model (see the <em>Sim Controls</em> tab) modulates these behaviors in dramatic ways.
 Small increments to voltage decay, excitation, inhibition, and spike dropout probability can result in totally different regimes than that I just described.</p>
+<img src="/img/snn_shots.png" alt="Phases of local structure" style="width:100%; height:auto;" />
 <!-- Begin exposition -->
 <p>Real cortical tissue exhibits very similar phenomena to this simulation and much, much more.
 Even the molecular mechanisms represented by the static parameters of this model are modulated by the electrochemical soup in which the neurons live.
@@ -302,6 +303,9 @@ As the system runs, those perturbations reverberate, transform, and combine, lit
 The transformations and reverberations represent both a running history of the inputs and several <em>a priori</em> computations on that history.
 All that is needed to utilize the system is a trainable output decoder, even a simple feed-forward network, that maps the state of the dynamical system to its outputs.
 For AI purposes, those outputs tend to be one of predictions, classifications, or action policies.</p>
+<br>
+<img src="/img/reservoir_water.png" alt="Phases of local structure" style="width:100%; height:auto;" />
+<br>
 <p>Reservoir computing has many appealing qualities as a metaphor for cortical computation.
 First, it is the kind of computing solution that has a high likelihood in evolutionary logic: full of randomness, mechanistic redundancy, and functional diversity.
 Second, it simplifies the learning problem to one of feed-forward decoding, even linear decoding, rather than lengthy applications of the chain rule as in error backpropagation.
