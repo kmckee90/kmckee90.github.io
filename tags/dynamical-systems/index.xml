@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dynamical Systems on Kevin L. McKee</title>
-    <link>https://kmckee90.github.io/tags/dynamical-systems/</link>
+    <link>http://localhost:1313/tags/dynamical-systems/</link>
     <description>Recent content in Dynamical Systems on Kevin L. McKee</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>kmckee90@gmail.com</managingEditor>
     <webMaster>kmckee90@gmail.com</webMaster>
     <lastBuildDate>Sat, 20 Mar 2021 22:42:13 +0000</lastBuildDate>
-    <atom:link href="https://kmckee90.github.io/tags/dynamical-systems/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dynamical-systems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stochastic resonance</title>
-      <link>https://kmckee90.github.io/posts/stochastic-resonance/</link>
+      <link>http://localhost:1313/posts/stochastic-resonance/</link>
       <pubDate>Sat, 20 Mar 2021 22:42:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/posts/stochastic-resonance/</guid>
-      <description>&lt;p&gt;In digging through old models and scripts, I came upon one to illustrate the concept of &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_resonance#:~:text=Stochastic%20resonance%20(SR)%20is%20a,a%20wide%20spectrum%20of%20frequencies&#34;&gt;stochastic resonance&lt;/a&gt;.&#xA;In short, when noise is added to periodic signals with local stability, it can cause them to jump between equilibria at about the dominant frequency:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://kmckee90.github.io/sr.gif&#34; alt=&#34;Stochastic Resonance Animation&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;We are always looking for interesting statistical phenomena like this for models in computational psychiatry, where symptoms of mania or depression, for example, are often episodic and make large, spontaneous leaps after periods of relative stability.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/stochastic-resonance/</guid>
+      <description>&lt;p&gt;In digging through old models and scripts, I came upon one to illustrate the concept of &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_resonance#:~:text=Stochastic%20resonance%20(SR)%20is%20a,a%20wide%20spectrum%20of%20frequencies&#34;&gt;stochastic resonance&lt;/a&gt;.&#xA;In short, when noise is added to periodic signals with local stability, it can cause them to jump between equilibria at about the dominant frequency:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/sr.gif&#34; alt=&#34;Stochastic Resonance Animation&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;We are always looking for interesting statistical phenomena like this for models in computational psychiatry, where symptoms of mania or depression, for example, are often episodic and make large, spontaneous leaps after periods of relative stability.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

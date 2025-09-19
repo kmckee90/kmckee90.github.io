@@ -2,180 +2,180 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Kevin L. McKee</title>
-    <link>https://kmckee90.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Kevin L. McKee</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>kmckee90@gmail.com</managingEditor>
     <webMaster>kmckee90@gmail.com</webMaster>
     <lastBuildDate>Tue, 29 Jun 2021 18:30:52 +0000</lastBuildDate>
-    <atom:link href="https://kmckee90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neuroscience</title>
-      <link>https://kmckee90.github.io/tags/neuroscience/</link>
+      <link>http://localhost:1313/tags/neuroscience/</link>
       <pubDate>Tue, 29 Jun 2021 18:30:52 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/neuroscience/</guid>
+      <guid>http://localhost:1313/tags/neuroscience/</guid>
       <description></description>
     </item>
     <item>
       <title>Postdoc</title>
-      <link>https://kmckee90.github.io/tags/postdoc/</link>
+      <link>http://localhost:1313/tags/postdoc/</link>
       <pubDate>Tue, 29 Jun 2021 18:30:52 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/postdoc/</guid>
+      <guid>http://localhost:1313/tags/postdoc/</guid>
       <description></description>
     </item>
     <item>
       <title>Research</title>
-      <link>https://kmckee90.github.io/tags/research/</link>
+      <link>http://localhost:1313/tags/research/</link>
       <pubDate>Tue, 29 Jun 2021 18:30:52 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/research/</guid>
+      <guid>http://localhost:1313/tags/research/</guid>
       <description></description>
     </item>
     <item>
       <title>Helmholtz</title>
-      <link>https://kmckee90.github.io/tags/helmholtz/</link>
+      <link>http://localhost:1313/tags/helmholtz/</link>
       <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/helmholtz/</guid>
+      <guid>http://localhost:1313/tags/helmholtz/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine-Learning</title>
-      <link>https://kmckee90.github.io/tags/machine-learning/</link>
+      <link>http://localhost:1313/tags/machine-learning/</link>
       <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/machine-learning/</guid>
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Neural-Networks</title>
-      <link>https://kmckee90.github.io/tags/neural-networks/</link>
+      <link>http://localhost:1313/tags/neural-networks/</link>
       <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/neural-networks/</guid>
+      <guid>http://localhost:1313/tags/neural-networks/</guid>
       <description></description>
     </item>
     <item>
       <title>R</title>
-      <link>https://kmckee90.github.io/tags/r/</link>
+      <link>http://localhost:1313/tags/r/</link>
       <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/r/</guid>
+      <guid>http://localhost:1313/tags/r/</guid>
       <description></description>
     </item>
     <item>
       <title>Recurrent</title>
-      <link>https://kmckee90.github.io/tags/recurrent/</link>
+      <link>http://localhost:1313/tags/recurrent/</link>
       <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/recurrent/</guid>
+      <guid>http://localhost:1313/tags/recurrent/</guid>
       <description></description>
     </item>
     <item>
       <title>Dynamical Systems</title>
-      <link>https://kmckee90.github.io/tags/dynamical-systems/</link>
+      <link>http://localhost:1313/tags/dynamical-systems/</link>
       <pubDate>Sat, 20 Mar 2021 22:42:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/dynamical-systems/</guid>
+      <guid>http://localhost:1313/tags/dynamical-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://kmckee90.github.io/tags/c&#43;&#43;/</link>
+      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
       <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/c&#43;&#43;/</guid>
+      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://kmckee90.github.io/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Rcpp</title>
-      <link>https://kmckee90.github.io/tags/rcpp/</link>
+      <link>http://localhost:1313/tags/rcpp/</link>
       <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/rcpp/</guid>
+      <guid>http://localhost:1313/tags/rcpp/</guid>
       <description></description>
     </item>
     <item>
       <title>Stan</title>
-      <link>https://kmckee90.github.io/tags/stan/</link>
+      <link>http://localhost:1313/tags/stan/</link>
       <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/stan/</guid>
+      <guid>http://localhost:1313/tags/stan/</guid>
       <description></description>
     </item>
     <item>
       <title>Educational</title>
-      <link>https://kmckee90.github.io/tags/educational/</link>
+      <link>http://localhost:1313/tags/educational/</link>
       <pubDate>Fri, 19 Mar 2021 10:11:35 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/educational/</guid>
+      <guid>http://localhost:1313/tags/educational/</guid>
       <description></description>
     </item>
     <item>
       <title>Mcmc</title>
-      <link>https://kmckee90.github.io/tags/mcmc/</link>
+      <link>http://localhost:1313/tags/mcmc/</link>
       <pubDate>Fri, 19 Mar 2021 10:11:35 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/mcmc/</guid>
+      <guid>http://localhost:1313/tags/mcmc/</guid>
       <description></description>
     </item>
     <item>
       <title>Factor-Analysis</title>
-      <link>https://kmckee90.github.io/tags/factor-analysis/</link>
+      <link>http://localhost:1313/tags/factor-analysis/</link>
       <pubDate>Fri, 19 Mar 2021 08:55:22 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/factor-analysis/</guid>
+      <guid>http://localhost:1313/tags/factor-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Irt</title>
-      <link>https://kmckee90.github.io/tags/irt/</link>
+      <link>http://localhost:1313/tags/irt/</link>
       <pubDate>Fri, 19 Mar 2021 08:55:22 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/irt/</guid>
+      <guid>http://localhost:1313/tags/irt/</guid>
       <description></description>
     </item>
     <item>
       <title>Models</title>
-      <link>https://kmckee90.github.io/tags/models/</link>
+      <link>http://localhost:1313/tags/models/</link>
       <pubDate>Fri, 19 Mar 2021 08:55:22 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/models/</guid>
+      <guid>http://localhost:1313/tags/models/</guid>
       <description></description>
     </item>
     <item>
       <title>Statistics</title>
-      <link>https://kmckee90.github.io/tags/statistics/</link>
+      <link>http://localhost:1313/tags/statistics/</link>
       <pubDate>Fri, 19 Mar 2021 08:55:22 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/statistics/</guid>
+      <guid>http://localhost:1313/tags/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>Rbm</title>
-      <link>https://kmckee90.github.io/tags/rbm/</link>
+      <link>http://localhost:1313/tags/rbm/</link>
       <pubDate>Wed, 17 Mar 2021 18:55:25 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/rbm/</guid>
+      <guid>http://localhost:1313/tags/rbm/</guid>
       <description></description>
     </item>
     <item>
       <title>Art</title>
-      <link>https://kmckee90.github.io/tags/art/</link>
+      <link>http://localhost:1313/tags/art/</link>
       <pubDate>Fri, 12 Mar 2021 21:40:23 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/art/</guid>
+      <guid>http://localhost:1313/tags/art/</guid>
       <description></description>
     </item>
     <item>
       <title>Painting</title>
-      <link>https://kmckee90.github.io/tags/painting/</link>
+      <link>http://localhost:1313/tags/painting/</link>
       <pubDate>Fri, 12 Mar 2021 21:40:23 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/painting/</guid>
+      <guid>http://localhost:1313/tags/painting/</guid>
       <description></description>
     </item>
     <item>
       <title>Paintings</title>
-      <link>https://kmckee90.github.io/tags/paintings/</link>
+      <link>http://localhost:1313/tags/paintings/</link>
       <pubDate>Fri, 12 Mar 2021 21:13:28 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/paintings/</guid>
+      <guid>http://localhost:1313/tags/paintings/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>https://kmckee90.github.io/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Thu, 11 Mar 2021 21:40:23 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
   </channel>

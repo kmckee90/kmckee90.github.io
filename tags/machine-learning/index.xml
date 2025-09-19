@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine-Learning on Kevin L. McKee</title>
-    <link>https://kmckee90.github.io/tags/machine-learning/</link>
+    <link>http://localhost:1313/tags/machine-learning/</link>
     <description>Recent content in Machine-Learning on Kevin L. McKee</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>kmckee90@gmail.com</managingEditor>
     <webMaster>kmckee90@gmail.com</webMaster>
     <lastBuildDate>Thu, 25 Mar 2021 09:38:21 +0000</lastBuildDate>
-    <atom:link href="https://kmckee90.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Binary neural nets in R, part 3: Recurrent Helmholtz Machine</title>
-      <link>https://kmckee90.github.io/posts/recurrenthelmholtz/</link>
+      <link>http://localhost:1313/posts/recurrenthelmholtz/</link>
       <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/posts/recurrenthelmholtz/</guid>
+      <guid>http://localhost:1313/posts/recurrenthelmholtz/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/kmckee90/neural-networks&#34;&gt;github repository for this project&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Part 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, Hinton already published the idea in 1995. I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Binary neural nets in R, part 2: Helmholtz Machine</title>
-      <link>https://kmckee90.github.io/posts/hm1/</link>
+      <link>http://localhost:1313/posts/hm1/</link>
       <pubDate>Thu, 18 Mar 2021 16:49:12 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/posts/hm1/</guid>
+      <guid>http://localhost:1313/posts/hm1/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/kmckee90/neural-networks&#34;&gt;github source for this project&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the last post, I looked at coding a restricted Boltzmann machine (RBM) in R. In this one, I will compare the algorithm and its results to the Helmholtz Machine, which uses the wake-sleep algorithm.&lt;/p&gt;&#xA;&lt;p&gt;The basic idea behind the wake-sleep algorithm is that the model learns in two alternating phases. In the wake phase, random values for the hidden nodes are generated according to the expectations of the recognition network, then the generative network weights are adjusted.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Binary neural nets in R, part 1: Restricted Boltzmann Machine</title>
-      <link>https://kmckee90.github.io/posts/rbm1/</link>
+      <link>http://localhost:1313/posts/rbm1/</link>
       <pubDate>Wed, 17 Mar 2021 18:55:25 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/posts/rbm1/</guid>
+      <guid>http://localhost:1313/posts/rbm1/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/kmckee90/neural-networks&#34;&gt;github source for this project&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;For most statistical models, you can verify that they work by simulating data from a set of parameter values, then fitting the model to the simulated data and seeing how well it recovers those values. With artificial neural networks it is common to have many local solutions and a stochastic learning algorithm, so while an ANN may find an good solution on the simulated data, it is far less likely to match the data-generating parameters.&lt;/p&gt;</description>
     </item>
   </channel>
