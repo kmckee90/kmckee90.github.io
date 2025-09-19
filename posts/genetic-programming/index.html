@@ -307,7 +307,7 @@ Evolution, though blind and inefficient, often discovers systems no one could ha
 <p>In 2024, I briefly dived into genetic programming and produced <a href="https://github.com/kmckee90/misc_experiments/blob/master/experiments/genetic_programming/jax_gp.py">code for mutating and recombining tree-shaped genomes of mathematical expressions</a>.
 The idea was that, while we did our best to engineer algorithms, some dedicated computing cluster could asynchronously churn out algorithms for fundamental problems, like localized learning rules, new <a href="../snn-demo/">dynamical systems for memory and computation</a>, and model architectures.
 It isn&rsquo;t a realistic goal without an extremely large, parallel, computing environment, but I had just gotten my head around <a href="https://github.com/jax-ml/jax">JAX</a> and thought it worth exploring.</p>
-<p>The idea behind binary tree–structured genomes is to define a data structure for matheamtical expressions that remains closed under mutation, recombination, and deletion.
+<p>The idea behind binary tree–structured genomes is to define a data structure for mathematical expressions that remains closed under mutation, recombination, and deletion.
 For example, a simple neural network looks like this:
 $$Y=W_1\text{ReLU}(W_0X+b_0)+b_1$$</p>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
