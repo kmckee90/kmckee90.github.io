@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Evolving Algorithms with Tree Genomes in JAX - </title>
+
+  <meta name="description" content="Could we evolve entirely unforeseen kinds of AI from mathematical expressions?
+Engineering works within the narrow bounds of what reason can foresee.
+Evolution, though blind and inefficient, often discovers systems no one could have predicted from first principles.
+In 2024, I briefly dived into genetic programming and produced code for mutating and recombining tree-shaped genomes of mathematical expressions.
+The idea was that, while we did our best to engineer algorithms, some dedicated computing cluster could asynchronously churn out algorithms for fundamental problems, like localized learning rules, new dynamical systems for memory and computation, and model architectures.
+It isn&rsquo;t a realistic goal without an extremely large, parallel, computing environment, but I had just gotten my head around JAX and thought it worth exploring."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Kevin L. McKee",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/genetic-programming\/",
+          "name": "Evolving algorithms with tree genomes in jax"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Evolving Algorithms with Tree Genomes in JAX",
+  "description" : "Could we evolve entirely unforeseen kinds of AI from mathematical expressions? Engineering works within the narrow bounds of what reason can foresee. Evolution, though blind and inefficient, often discovers systems no one could have predicted from first principles.\nIn 2024, I briefly dived into genetic programming and produced code for mutating and recombining tree-shaped genomes of mathematical expressions. The idea was that, while we did our best to engineer algorithms, some dedicated computing cluster could asynchronously churn out algorithms for fundamental problems, like localized learning rules, new dynamical systems for memory and computation, and model architectures. It isn\u0026rsquo;t a realistic goal without an extremely large, parallel, computing environment, but I had just gotten my head around JAX and thought it worth exploring.\n",
+  "inLanguage" : "en",
+  "wordCount":  734 ,
+  "datePublished" : "2025-08-03T09:25:40-04:00",
+  "dateModified" : "2025-08-03T09:25:40-04:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/genetic-programming\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Evolving Algorithms with Tree Genomes in JAX" />
+<meta property="og:description" content="Could we evolve entirely unforeseen kinds of AI from mathematical expressions?
+Engineering works within the narrow bounds of what reason can foresee.
+Evolution, though blind and inefficient, often discovers systems no one could have predicted from first principles.
+In 2024, I briefly dived into genetic programming and produced code for mutating and recombining tree-shaped genomes of mathematical expressions.
+The idea was that, while we did our best to engineer algorithms, some dedicated computing cluster could asynchronously churn out algorithms for fundamental problems, like localized learning rules, new dynamical systems for memory and computation, and model architectures.
+It isn&rsquo;t a realistic goal without an extremely large, parallel, computing environment, but I had just gotten my head around JAX and thought it worth exploring.">
+<meta property="og:url" content="http://localhost:1313/posts/genetic-programming/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kevin L. McKee" />
+
+  <meta name="twitter:title" content="Evolving Algorithms with Tree Genomes in JAX" />
+  <meta name="twitter:description" content="Could we evolve entirely unforeseen kinds of AI from mathematical expressions?
+Engineering works within the narrow bounds of what reason can foresee.
+Evolution, though blind and inefficient, often …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.150.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Kevin L. McKee"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://localhost:1313/css/highlight.min.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+    ]
+  });
+});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('pre > code.language-mermaid').forEach((code) => {
+    const pre = code.parentElement;
+    const wrapper = document.createElement('div');
+    wrapper.style.textAlign = 'center';
+    const diagram = document.createElement('div');
+    diagram.className = 'mermaid';
+    diagram.textContent = code.textContent;
+    wrapper.appendChild(diagram);
+    pre.replaceWith(wrapper);
+  });
+
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',
+    theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+  });
+});
+</script>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Kevin L. McKee</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Research" href="/research">Research</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Code" href="/code">Code</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Art" href="/art">Art</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Evolving Algorithms with Tree Genomes in JAX</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Could we evolve entirely unforeseen kinds of AI from mathematical expressions?
+Engineering works within the narrow bounds of what reason can foresee.
+Evolution, though blind and inefficient, often discovers systems no one could have predicted from first principles.</p>
+<p>In 2024, I briefly dived into genetic programming and produced <a href="https://github.com/kmckee90/misc_experiments/blob/master/experiments/genetic_programming/jax_gp.py">code for mutating and recombining tree-shaped genomes of mathematical expressions</a>.
+The idea was that, while we did our best to engineer algorithms, some dedicated computing cluster could asynchronously churn out algorithms for fundamental problems, like localized learning rules, new <a href="../snn-demo/">dynamical systems for memory and computation</a>, and model architectures.
+It isn&rsquo;t a realistic goal without an extremely large, parallel, computing environment, but I had just gotten my head around <a href="https://github.com/jax-ml/jax">JAX</a> and thought it worth exploring.</p>
+<p>The idea behind binary tree–structured genomes is to define a data structure for matheamtical expressions that remains closed under mutation, recombination, and deletion.
+For example, a simple neural network looks like this:
+$$Y=W_1\text{ReLU}(W_0X+b_0)+b_1$$</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+  + --- MatMul
+  + --- b
+  MatMul---ReLU
+  MatMul---W1[W]
+  ReLU---+0[+]
+  +0[+]---MatMul0[MatMul]
+  +0[+]---b0[b]
+  MatMul0[MatMul]---W0[W]
+  MatMul0[MatMul]---X
+</code></pre><p>The multilayer feed-forward network needs no new elements, just a single recombination of $X$ with a copy of its (great-grand-)parent branch:
+$$Y = W_2\text{ReLU}(W_1\text{ReLU}(W_0X+b_0)+b_1)+b_2$$</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+  
+  +3[+] --- MatMul3[MatMul]
+  +3 --- b3[b]
+  MatMul3---ReLU3[ReLU]
+  MatMul3---W3[W]
+  
+  ReLU3---+
+  +---MatMul
+  +---b1[b]
+  MatMul---W1[W]
+  MatMul---2ReLU
+  
+  2ReLU[ReLU]---+2
+  +2[+]---MM2[MatMul]
+  +2---b2[b]
+  MM2---W
+  MM2---X
+</code></pre><p>We can formulate a simple recurrent network if the leaf node H is treated as stateful:
+$$Y=W_2 H+b_1$$
+$$H=\text{tanh}(W_1 X + W_0 H + b_0)$$</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+	M0[MatMul] --- W0
+	M0[MatMul] --- H
+	M1[MatMul] --- W1
+	M1[MatMul] --- X
+	+0[+] --- M0
+	+0[+] --- b0
+	+1[+] --- +0
+	+1[+] --- M1
+	tanh --- +1
+	H0[H] --- tanh
+	M2[MatMul] --- H0
+	M2[MatMul] --- W2
+	+2[+] --- M2
+	+2[+] --- b1
+	
+	
+</code></pre><p>A learning algorithm, namely the delta rule on a linear model, looks like this:</p>
+<p>$Y=W_0X$</p>
+<p>$W_0 = W_0 + \text{LR} * X(Y-W_0X)$</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+  mm1[MatMul] --- W[W0]
+  W---+0[+]
+  +0 --- W0
+  +0 --- *0[*]
+  *0 --- LR
+  *0 --- mm3
+  mm3 --- X2[X]
+  mm3[MatMul]--- -0[-]
+  -0 --- Y
+  -0 --- mm2[MatMul]
+  mm2 --- W2[W0]
+  mm2 --- X
+  mm1---X1[X]
+  
+</code></pre><p>That&rsquo;s all I&rsquo;m going to do by hand for now.
+I was able to code the entire evolution pipeline this way.
+It required some special treatment of $X$ and $Y$ to create a consistent input-output processing loop and string notations for nodes and leaves.
+Leaf nodes can be vectors (V), matrices (M), scalars (S), or special vectors $X$ and $Y$.
+Scalars are defined by strings in the format &ldquo;S_&lt;idx&gt;_&lt;base&gt;e&lt;power&gt;&rdquo;, but often they mutate into variables.
+Resulting genomes look like this sample output:</p>
+<pre tabindex="0"><code>Run time: 25.57770299911499
+BEST_FITNESS: -7.6178203
+Best model:
+        V_5=(gp_vector(jnp.add(jnp.multiply(jnp.multiply(V_2,gp_matrix(gp_logabs(gp_abspower(gp_identity(S_4_5em3),gp_abspower(Y,V_2))))),gp_divide(Y,V_6)),M_1)))
+        V_0=(gp_vector(gp_divide(M_11,gp_logabs(V_1))))
+        V_Y=(gp_vector(V_7))
+        V_6=(gp_vector(X))
+        M_0=(gp_matrix(gp_divide(S_8_5e1,jnp.multiply(gp_divide(X,gp_matrix(gp_divide(X,M_5))),gp_relu(X)))))
+        V_Y=(gp_vector(S_4_5em3))
+GENERATION: 298
+</code></pre><p>A pleasing observation about these outputs is that they behave exactly like genomes should.
+If the problem is to predict data generated from $Y=3X$, it is less likely that the system mutates a leaf node that is exactly 3, and more likely it mutates something like
+$$\log_{2}\left(\log_{2}\left(1e10^{2}\left(\log_{2}\left(2e10^{2}\right)\right)\right)\right)\approx 3. $$
+This seems ridiculous, but the rationale is just different.
+This way, the scalar is made of several reusable parts.
+The evolutionary process can shape itself through such redundant &ldquo;junk DNA&rdquo; to select on average more or less fine-grained increments, if the problem domain tends to demand it.</p>
+<p>I chose JAX because the idea was to leverage GPU parallel processing to make this practical.
+The result was less performant than originally desired: you can JIT compile each new genome which represents a system of tensors and vector operations, resulting in very fast evaluation of each member of the population.
+But because each member is a unique system of uncertain length, you cannot run several members asynchronously on a single GPU.
+The per-member JIT compilation accounts for the majority of the compute time.</p>
+<p>I cannot think of a way to structure this up such that the whole process is compiled once and then executed fully in the GPU without imposing structural bounds on the genomes.
+Imposing such bounds would defeat the purpose of genetic programming.
+For bounded structures, it is sensible to parameterize a fixed system and use an evolutionary strategy to tune the parameters.</p>
+<p>In any case, genetic programming like this is an idea that can never be totally abandoned.
+Nothing else works quite like it or can, in principle, produce the same kind and extent of results.
+But of course, our hardware is not designed appropriately to simulate the flexibility, asynchronicity, and scale of such natural processes.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgenetic-programming%2f&amp;text=Evolving%20Algorithms%20with%20Tree%20Genomes%20in%20JAX&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgenetic-programming%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgenetic-programming%2f&amp;title=Evolving%20Algorithms%20with%20Tree%20Genomes%20in%20JAX" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgenetic-programming%2f&amp;title=Evolving%20Algorithms%20with%20Tree%20Genomes%20in%20JAX" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgenetic-programming%2f&amp;title=Evolving%20Algorithms%20with%20Tree%20Genomes%20in%20JAX" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgenetic-programming%2f&amp;description=Evolving%20Algorithms%20with%20Tree%20Genomes%20in%20JAX" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/ccnlab/" data-toggle="tooltip" data-placement="top" title="New position at CCNLab">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/snn-demo/" data-toggle="tooltip" data-placement="top" title="What kind of algorithms run in a soup?">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+      
+      
+      
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:kmckee90@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/kmckee90" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/kevin-mckee-18a2561a0" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Kevin L. McKee</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.150.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script>
+<script src="http://localhost:1313/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
