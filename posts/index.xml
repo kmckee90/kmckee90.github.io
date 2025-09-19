@@ -39,13 +39,6 @@
       <description>&lt;p&gt;As of June 21, 2021 I have left my job as a biostatistician at Virginia Tech and joined UC Davis &lt;a href=&#34;https://ccnlab.org/&#34;&gt;Computational Cognitive Neuroscience lab&lt;/a&gt; lab as a postdoc! I cannot express how exciting it has been to discover this kind of research but to also land an opportunity to train and do it myself. The lab has a variety of ongoing research involving biologically-constrained spiking and rate coded neural networks in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Leabra&#34;&gt;Leabra&lt;/a&gt; framework (&lt;a href=&#34;https://github.com/emer/leabra&#34;&gt;github&lt;/a&gt;). There is an excellent &lt;a href=&#34;https://compcogneuro.org/&#34;&gt;textbook written and published for free online&lt;/a&gt; by the PI, Randy O&amp;rsquo;Reilly.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Binary neural nets in R, part 3: Recurrent Helmholtz Machine</title>
-      <link>https://kmckee90.github.io/posts/recurrenthelmholtz/</link>
-      <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/posts/recurrenthelmholtz/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/kmckee90/neural-networks&#34;&gt;github repository for this project&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Part 3 of my neural network project in R involves coding a recurrent version of the Helmholtz machine. A recurrent (i.e., autoregressive or time-lagged) version of the network follows naturally (kind of), and of course, Hinton already published the idea in 1995. I used his paper as a guide to be sure nothing was markedly different about the approach and coded it according to my previous strategy.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Stochastic resonance</title>
       <link>https://kmckee90.github.io/posts/stochastic-resonance/</link>
       <pubDate>Sat, 20 Mar 2021 22:42:13 +0000</pubDate><author>kmckee90@gmail.com</author>
@@ -86,13 +79,6 @@
       <pubDate>Thu, 18 Mar 2021 16:49:12 +0000</pubDate><author>kmckee90@gmail.com</author>
       <guid>https://kmckee90.github.io/posts/hm1/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/kmckee90/neural-networks&#34;&gt;github source for this project&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;In the last post, I looked at coding a restricted Boltzmann machine (RBM) in R. In this one, I will compare the algorithm and its results to the Helmholtz Machine, which uses the wake-sleep algorithm.&lt;/p&gt;&#xA;&lt;p&gt;The basic idea behind the wake-sleep algorithm is that the model learns in two alternating phases. In the wake phase, random values for the hidden nodes are generated according to the expectations of the recognition network, then the generative network weights are adjusted.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Binary neural nets in R, part 1: Restricted Boltzmann Machine</title>
-      <link>https://kmckee90.github.io/posts/rbm1/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/posts/rbm1/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/kmckee90/neural-networks&#34;&gt;github source for this project&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;For most statistical models, you can verify that they work by simulating data from a set of parameter values, then fitting the model to the simulated data and seeing how well it recovers those values. With artificial neural networks it is common to have many local solutions and a stochastic learning algorithm, so while an ANN may find an good solution on the simulated data, it is far less likely to match the data-generating parameters.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Painting a harpsichord lid</title>

@@ -32,41 +32,6 @@
       <description></description>
     </item>
     <item>
-      <title>Helmholtz</title>
-      <link>https://kmckee90.github.io/tags/helmholtz/</link>
-      <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/helmholtz/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Machine-Learning</title>
-      <link>https://kmckee90.github.io/tags/machine-learning/</link>
-      <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Neural-Networks</title>
-      <link>https://kmckee90.github.io/tags/neural-networks/</link>
-      <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/neural-networks/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>R</title>
-      <link>https://kmckee90.github.io/tags/r/</link>
-      <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/r/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Recurrent</title>
-      <link>https://kmckee90.github.io/tags/recurrent/</link>
-      <pubDate>Thu, 25 Mar 2021 09:38:21 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/recurrent/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Dynamical Systems</title>
       <link>https://kmckee90.github.io/tags/dynamical-systems/</link>
       <pubDate>Sat, 20 Mar 2021 22:42:13 +0000</pubDate><author>kmckee90@gmail.com</author>
@@ -85,6 +50,13 @@
       <link>https://kmckee90.github.io/tags/programming/</link>
       <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
       <guid>https://kmckee90.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R</title>
+      <link>https://kmckee90.github.io/tags/r/</link>
+      <pubDate>Sat, 20 Mar 2021 21:47:13 +0000</pubDate><author>kmckee90@gmail.com</author>
+      <guid>https://kmckee90.github.io/tags/r/</guid>
       <description></description>
     </item>
     <item>
@@ -144,10 +116,24 @@
       <description></description>
     </item>
     <item>
-      <title>Rbm</title>
-      <link>https://kmckee90.github.io/tags/rbm/</link>
-      <pubDate>Wed, 17 Mar 2021 18:55:25 +0000</pubDate><author>kmckee90@gmail.com</author>
-      <guid>https://kmckee90.github.io/tags/rbm/</guid>
+      <title>Helmholtz</title>
+      <link>https://kmckee90.github.io/tags/helmholtz/</link>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 +0000</pubDate><author>kmckee90@gmail.com</author>
+      <guid>https://kmckee90.github.io/tags/helmholtz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine-Learning</title>
+      <link>https://kmckee90.github.io/tags/machine-learning/</link>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 +0000</pubDate><author>kmckee90@gmail.com</author>
+      <guid>https://kmckee90.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Neural-Networks</title>
+      <link>https://kmckee90.github.io/tags/neural-networks/</link>
+      <pubDate>Thu, 18 Mar 2021 16:49:12 +0000</pubDate><author>kmckee90@gmail.com</author>
+      <guid>https://kmckee90.github.io/tags/neural-networks/</guid>
       <description></description>
     </item>
     <item>
