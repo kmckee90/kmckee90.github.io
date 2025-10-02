@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on Kevin L. McKee</title>
+    <link>http://localhost:1313/tags/statistics/</link>
+    <description>Recent content in Statistics on Kevin L. McKee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>kmckee90@gmail.com</managingEditor>
+    <webMaster>kmckee90@gmail.com</webMaster>
+    <lastBuildDate>Fri, 19 Mar 2021 08:55:22 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stan: Structural Ordinal Item Response Theory with a Latent Interaction</title>
+      <link>http://localhost:1313/posts/ordinalirt/</link>
+      <pubDate>Fri, 19 Mar 2021 08:55:22 +0000</pubDate><author>kmckee90@gmail.com</author>
+      <guid>http://localhost:1313/posts/ordinalirt/</guid>
+      <description>&lt;p&gt;The Non-Gaussian factor model introduces the idea of using other distributions for a factor analysis. But that code is not very generalized, and in reality we&amp;rsquo;ll tend to need something more like structural equation modeling with non-Gaussian variables.&lt;/p&gt;&#xA;&lt;p&gt;The name for a factor model with logit-linked indicators, whether dichotomous or ordinal, is Item Response Theory. It has been used for decades to develop instruments and in particular, tests. Because of its history, factor loadings are called the &amp;ldquo;discrimination&amp;rdquo; parameters, intercepts are the item &amp;ldquo;difficulty&amp;rdquo;, and the factor scores represent each person&amp;rsquo;s &amp;ldquo;ability&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stan: Non-Normal Factor Model</title>
+      <link>http://localhost:1313/posts/nongaussianfa/</link>
+      <pubDate>Fri, 19 Mar 2021 08:43:04 +0000</pubDate><author>kmckee90@gmail.com</author>
+      <guid>http://localhost:1313/posts/nongaussianfa/</guid>
+      <description>&lt;p&gt;There are so many factor analyses in the world and so few truly normally distributed variables. I have not seen much careful tailoring of residual distributions in medical or psychological research. It is probably because most software don&amp;rsquo;t support it or make it convenient. It was a revelation to me that you can use Markov Chain Monte Carlo (MCMC) to sample latent variables and then do all kinds of things, like non-Gaussian distributions and latent variable interactions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
